@@ -1,0 +1,131 @@
+--PEDIDO = 'CX-21707850'
+
+select  ve.* 
+--UPDATE V SET TOT_QTDE_ORIGINAL=20, TOT_QTDE_ENTREGAR=20, TOT_VALOR_ORIGINAL=20*4.43, TOT_VALOR_ENTREGAR=20*4.43
+--update vp set QTDE_ORIGINAL=20, valor_original = 20 * 4.43, valor_entregar = 20 * 4.43
+--update ve set QTDE_EMBALADA=20, VALOR_EMBALADO=20*4.43
+--UPDATE A SET QTDE_TOTAL=20
+from CAEDU_RESERVA_AUTOMATICA a
+inner join vendas v on v.pedido = a.VENDA
+inner join VENDAS_PRODUTO vp on vp.PEDIDO = a.VENDA and vp.PRODUTO=a.PRODUTO
+inner join VENDAS_PROD_EMBALADO ve on ve.caixa = a.CAIXA
+/*
+where a.pedido in
+('291275',    
+'291245',
+'291250',    
+'291272',    
+'291273',    
+'291294',    
+'291297',    
+'291298',    
+'291299',    
+'291300',    
+'291301',    
+'291302',    
+'291303',    
+'291248')
+and */ 
+where a.caixa = '22828120'
+
+select * 
+--UPDATE A SET TOT_QTDE_ORIGINAL=24, TOT_QTDE_ENTREGAR=24, TOT_VALOR_ENTREGAR=24*VP.PRECO1, TOT_VALOR_ORIGINAL=24*VP.PRECO1
+from vendas a 
+inner join VENDAS_PRODUTO vp on vp.PEDIDO = a.pedido 
+--inner join VENDAS_PROD_EMBALADO ve on 'CX'+RTRIM(ve.caixa) = RTRIM(a.pedido)
+WHERE A.PEDIDO = 'CX-22828120'
+
+SELECT * 
+--UPDATE B SET VALOR_ORIGINAL=PRECO1*24, VALOR_ENTREGAR=PRECO1*24, QTDE_ORIGINAL=24, QTDE_ENTREGAR=24
+FROM VENDAS_PRODUTO B WHERE PEDIDO = 'CX-22828120'
+
+SELECT * 
+--UPDATE C SET QTDE_EMBALADA=24, VALOR_EMBALADO=PRECO1 * 24
+FROM VENDAS_PROD_EMBALADO C WHERE CAIXA = '22828120'
+
+SELECT * 
+--UPDATE A SET QTDE_CAIXA=24
+FROM FATURAMENTO_CAIXAS A WHERE CAIXA='22828120'
+
+--SELECT * FROM CAEDU_RESERVA_AUTOMATICA_PACK_WMS WHERE DISTRIBUICAO = '00013677'
+
+--SELECT * FROM PRODUTOS_PACKS_PERMITIDOS WHERE PRODUTO = 'Z3010092'
+
+291275    F5010185
+291245    F5010180
+291250    F5010182
+291272    F5010183
+291273    F5010184
+291294    F5010196
+291297    F5010198
+291298    F5010199
+291299    F5010200
+291300    F5010201
+291301    F5010202
+291302    F5010203
+291303    F5010204
+291248    F5010181
+
+select erp_qtd_pack, pp.* 
+--update p set ERP_QTD_PACK=24
+from compras_produto a 
+inner join PRODUTOS_PACKS_PERMITIDOS pp on pp.PRODUTO=a.PRODUTO
+inner join produtos p on p.PRODUTO=a.PRODUTO
+where a.pedido in
+('291275',    
+'291245',
+'291250',    
+'291272',    
+'291273',    
+'291294',    
+'291297',    
+'291298',    
+'291299',    
+'291300',    
+'291301',    
+'291302',    
+'291303',    
+'291248')
+
+
+
+select * from faturamento_caixas where caixa in  (
+select  caixa
+from CAEDU_RESERVA_AUTOMATICA a
+where a.pedido in
+('291275',    
+'291245',
+'291250',    
+'291272',    
+'291273',    
+'291294',    
+'291297',    
+'291298',    
+'291299',    
+'291300',    
+'291301',    
+'291302',    
+'291303',    
+'291248'))
+
+
+select * 
+from COMPRAS_PRODUTO a
+where a.pedido in
+('291275',    
+'291245',
+'291250',    
+'291272',    
+'291273',    
+'291294',    
+'291297',    
+'291298',    
+'291299',    
+'291300',    
+'291301',    
+'291302',    
+'291303',    
+'291248')
+
+
+

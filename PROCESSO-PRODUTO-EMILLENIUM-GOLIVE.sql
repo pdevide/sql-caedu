@@ -1,0 +1,57 @@
+/*** 
+QUERY NO
+banco de homologação
+***/
+
+
+select top 100 DATA_CADASTRAMENTO, 
+			P.DATA_PARA_TRANSFERENCIA,p.FABRICANTE ,p.* 
+from produtos p
+inner join compras_produto cp on cp.produto = p.produto
+inner join compras c on c.pedido = cp.pedido
+where c.filial_a_entregar = 'CD CAJAMAR'
+AND c.TOT_QTDE_ENTREGAR>0 AND p.PRODUTO='Z6130020'
+order by P.data_cadastramento desc
+
+SELECT * FROM COMPRAS WHERE PEDIDO = '304172V'
+
+SELECT A.PEDIDO,A.EMISSAO,B.* 
+FROM ESTOQUE_PROD1_ENT B
+INNER JOIN ESTOQUE_PROD_ENT A 
+	ON A.ROMANEIO_PRODUTO=B.ROMANEIO_PRODUTO 
+		AND A.FILIAL = B.FILIAL
+WHERE PRODUTO = 'Z6130020' AND A.FILIAL='CD CAJAMAR' 
+AND A.PEDIDO = '304172V'
+ORDER BY A.EMISSAO DESC
+
+select * from PRODUTOS_PACKS_PERMITIDOS 
+where PRODUTO = 'Z6130020'
+
+select * from COMPRAS_PRODUTO where PEDIDO = '304172V'
+--1	 2	 3	 3	 3	 1
+
+select 4+8+	12+	12+	12+	4
+	 --1 2   3   3   3  1
+
+select * from caedu_reserva_automatica where PRODUTO = 'Z6130020'
+
+select * from VENDAS WHERE PEDIDO LIKE 'CX-2152508%' 
+
+SELECT * FROM VENDAS_PROD_EMBALADO WHERE CAIXA LIKE '2152508%'
+
+
+/*** 
+QUERY NO
+banco de produção
+***/
+
+SELECT A.PEDIDO,A.EMISSAO, A.NF_ENTRADA,b.* 
+FROM ESTOQUE_PROD1_ENT B
+INNER JOIN ESTOQUE_PROD_ENT A 
+	ON A.ROMANEIO_PRODUTO=B.ROMANEIO_PRODUTO 
+		AND A.FILIAL = B.FILIAL
+WHERE PRODUTO = 'Z6130020' AND A.FILIAL='CD CAJAMAR' 
+AND A.PEDIDO IS NOT NULL
+ORDER BY A.EMISSAO DESC
+
+select * from caedu_reserva_automatica where pedido like '304172%'

@@ -1,0 +1,91 @@
+IF EXISTS (
+            SELECT * 
+              FROM sys.objects 
+             WHERE object_id = OBJECT_ID(N'[dbo].[usf_calcula_dv_nfe]') 
+               AND type IN (N'FN')
+           )
+   DROP FUNCTION usf_calcula_dv_nfe;
+  
+GO
+
+CREATE FUNCTION usf_calcula_dv_nfe(@number varchar(max)) RETURNS bit
+-- Nome objeto.............: usf_calcula_dv_nfe.sql
+-- Finalidade..............: Store Procedure (Function)  que calcula o digito verificador da chave de acesso NFe usando o modulo 11
+-- OBS.....................: A entrada é um varchar e o retorno é um  bit 1 para valido e 0 para invalido 
+-- ........................: 
+--  
+AS
+BEGIN
+ DECLARE @i       int,
+         @ix      int, 
+         @c       int,
+         @keyx    int,
+         @numberx varchar(44), 
+         @r       int
+  
+       
+ SET @c    = 2
+ SET @i    = 1
+ SET @ix   = 43 
+ SET @keyx = 0 
+  
+ -- Pre-validacao 1, se e nulo, entao retorna nulo
+ IF @number IS NULL BEGIN
+    SET @r = NULL
+    RETURN (@r)  
+ END --fim_se      
+  
+ -- Pre-validacao 2, se e maior que 44 digitos , entao retorna 0 
+ IF LEN(@number) < 44 BEGIN
+    SET @r = 0 
+    RETURN (@r)
+ END --fim_se
+  
+ -- Pre-validacao 3, se e tem alguma letra, entao retorna 0 
+ IF (SELECT CASE WHEN patindex('%[^0-9]%', @number) > 0 THEN 1 ELSE 0 END) = 1 BEGIN
+    SET @r = 0
+    RETURN (@r)
+ END --fim_se  
+  
+ -- Pre-validacao 4, se e menor que 44 digitos , pode ser oriundo de bigint, então fazer tratamento de zeros 
+ SET @numberx = @number
+ IF LEN(@number) < 44 BEGIN
+    SET @numberx = REPLICATE('0',44-LEN(@number))+@number
+ END --fim se
+   
+ -- Loop por cada numero mutiplicando-o pelos valores de @c
+ -- Simulando o for invertido com passo -1 
+ WHILE (@i <= (len(@numberx)-1)) BEGIN
+    
+    --Verifica se o valor de @c for maior que nove, entao passa o valor pra 2
+    IF @c > 9 BEGIN
+       SET @c = 2
+    END --fim_se
+ 
+    --Soma os valores mutiplicados
+    SET @keyx = @keyx + (convert(int,substring(@number,@ix,1)) * @c) 
+   
+    --Controle de contadores
+    SET @c = @c + 1
+    SET @i = @i + 1 
+    SET @ix = @ix - 1 
+  
+ END  --fim_enquanto 
+   
+ --Obtem o digito verificador
+ IF ((@keyx % 11) = 0 OR (@keyx % 11) = 1) BEGIN
+    SET @r = 0
+ END ELSE BEGIN --senao   
+    SET @r  = 11 - (@keyx % 11)
+ END --fim_se
+   
+ IF @r = convert(int,substring(@numberx,len(@numberx),1)) BEGIN
+    SET @r = 1 
+ END ELSE BEGIN  --senao   
+    SET @r = 0       
+ END --fim_se
+   
+ RETURN (@r)
+  
+END;
+GO

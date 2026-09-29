@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# SQL Server Management Studio Version 21
+VisualStudioVersion = 17.14.36603.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "EXPEDICAO_CAEDU", "EXPEDICAO_CAEDU.ssmssqlproj", "{13958BA1-3DB6-7B90-A7DB-CB912B8CF47F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Default|Default = Default|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13958BA1-3DB6-7B90-A7DB-CB912B8CF47F}.Default|Default.ActiveCfg = Default
+		{A2D6FD91-BD91-4172-8543-DBC31E362DCB}.Default|Default.ActiveCfg = Default
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2B13A894-90DE-4C08-8B01-A5E4620A5C87}
+	EndGlobalSection
+EndGlobal

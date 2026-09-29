@@ -1,0 +1,11 @@
+select 
+RTRIM(CAST(REPLACE(CODIGO_BARRA,';','?') AS varchar(25))) AS  CODIGO_BARRA, 
+pb.PRODUTO, 
+COR_PRODUTO, 
+pb.TAMANHO, 
+RTRIM(CAST(REPLACE(PB.GRADE,';','?') AS varchar(25))) AS GRADE, 
+p.INATIVO, 
+RTRIM(CAST(replace(p.DESC_PRODUTO, ';', '') AS VARCHAR(40) )) as DESC_PRODUTO
+from PRODUTOS_BARRA pb
+inner join produtos p 
+	on p.PRODUTO = pb.PRODUTO

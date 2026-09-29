@@ -1,0 +1,32 @@
+/*
+select produto, COR_PRODUTO,* 
+from produtos_packs_permitidos a
+where produto = '18120060'    
+order by a.produto, a.COR_PRODUTO
+
+select * 
+from PRODUTOS_BARRA a
+where a.PRODUTO = '01225079' 
+and a.COR_PRODUTO = '00004' and a.TAMANHO = 2
+*/
+
+SELECT c.griffe, c.linha, c.GRUPO_PRODUTO, c.SUBGRUPO_PRODUTO, C.PRODUTO, b.COR_PRODUTO, B.CODIGO_BARRA, c.DESC_PRODUTO,
+			e.desc_cor_produto, RIGHT('00'+convert(varchar,b.TAMANHO),2) as TAMANHO, unpvt.QTY, h.PRECO1
+FROM (
+SELECT produto, cor_produto, PACK, 
+		ISNULL(Q1,0) Q1, ISNULL(Q2,0) Q2, ISNULL(Q3,0) Q3, ISNULL(Q4,0) Q4, ISNULL(Q5,0) Q5, ISNULL(Q6,0) Q6, 
+		ISNULL(Q7,0) Q7, ISNULL(Q8,0) Q8, ISNULL(Q9,0) Q9, ISNULL(Q10,0) Q10, ISNULL(Q11,0) Q11, ISNULL(Q12,0) Q12, 
+		ISNULL(Q13,0) Q13, ISNULL(Q14,0) Q14, ISNULL(Q15,0) Q15, ISNULL(Q16,0) Q16
+		FROM PRODUTOS_PACKS_PERMITIDOS PKP
+		where PKP.PRODUTO ='18120060' AND PACK = 'A'
+      ) p
+		UNPIVOT
+(QTY FOR tamanho IN (q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16) )AS unpvt
+LEFT JOIN (
+SELECT  PRODUTO, COR_PRODUTO, TAMANHO, MIN(CODIGO_BARRA) AS CODIGO_BARRA
+FROM [CAEDU].[dbo].PRODUTOS_BARRA
+GROUP BY PRODUTO, COR_PRODUTO, TAMANHO
+) B ON B.PRODUTO = unpvt.PRODUTO AND B.COR_PRODUTO = unpvt.COR_PRODUTO AND B.TAMANHO = substring(unpvt.tamanho,2,2)
+LEFT join [CAEDU].[dbo].PRODUTOS as c on b.PRODUTO=c.PRODUTO
+LEFT join [CAEDU].[dbo].PRODUTO_CORES as e on c.PRODUTO=e.PRODUTO and unpvt.COR_PRODUTO=e.COR_PRODUTO
+LEFT join [CAEDU].[dbo].produtos_precos as H on c.PRODUTO=h.PRODUTO where h.CODIGO_TAB_PRECO ='00';

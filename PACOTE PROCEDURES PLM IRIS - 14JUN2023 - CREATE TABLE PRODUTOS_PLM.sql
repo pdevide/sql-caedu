@@ -1,0 +1,88 @@
+USE [CAEDU]
+GO
+
+/****** Object:  Table [dbo].[PRODUTOS_PLM]    Script Date: 14/06/2023 16:04:24 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PRODUTOS_PLM]') AND type in (N'U'))
+DROP TABLE [dbo].[PRODUTOS_PLM]
+GO
+
+/****** Object:  Table [dbo].[PRODUTOS_PLM]    Script Date: 14/06/2023 16:04:24 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[PRODUTOS_PLM](
+	[PRODUTO] [char](12) NOT NULL,
+	[ESTACAO] [varchar](100) NULL,
+	[TOP_BOTTOM] [varchar](100) NULL,
+	[VISAO] [varchar](100) NULL,
+	[LICENCIADO] [varchar](100) NULL,
+	[MALHA_TECIDO] [varchar](100) NULL,
+	[LINHA_PROMO] [varchar](100) NULL,
+	[LINHA_PROMO_JEANS] [varchar](100) NULL,
+	[ESTACAO_COM_VERAO] [varchar](100) NULL,
+	[LEVE_PESADO] [varchar](100) NULL,
+	[EQUIPAMENTOS] [varchar](100) NULL,
+	[LINHA_ANTIGA] [varchar](100) NULL,
+	[CLASSIF_POR_PRODUTO_MARCAR_X] [varchar](100) NULL,
+	[DESC_PROMO_PROG_POR_ANO] [varchar](100) NULL,
+	[PROMO_PROGRAMA] [varchar](100) NULL,
+	[DIA_NOITE] [varchar](100) NULL,
+	[OBSERVACOES_PLANEJAMENTO] [varchar](100) NULL,
+	[ALCA_CABIDE] [varchar](100) NULL,
+	[PROGRAMA] [varchar](100) NULL,
+	[MÊS_LOJA_ORIGINAL] [varchar](100) NULL,
+	[ENTREGA_CD] [varchar](100) NULL,
+	[CLUSTER_LOJA] [varchar](100) NULL,
+	[MARGEM] [varchar](100) NULL,
+	[CAMPANHA_DE_POR_CARTAO] [varchar](100) NULL,
+	[CAMPANHA_DE_POR_VITRINE] [varchar](100) NULL,
+	[LAVAGEM] [varchar](100) NULL,
+	[GOLA] [varchar](100) NULL,
+	[DECOTE] [varchar](100) NULL,
+	[MANGA] [varchar](100) NULL,
+	[COMPRIMENTO_MANGA] [varchar](100) NULL,
+	[CINTURA] [varchar](100) NULL,
+	[APLICACAO] [varchar](100) NULL,
+	[TIPO_ALCA] [varchar](100) NULL,
+	[ESTRUTURA_BOJO] [varchar](100) NULL,
+	[TIPO_BICO] [varchar](100) NULL,
+	[TIPO_SALTO] [varchar](100) NULL,
+	[ALTURA_SALTO] [varchar](100) NULL,
+	[TIPO_FECHAMENTO] [varchar](100) NULL,
+	[BANHO] [varchar](100) NULL,
+	[DATA_LACRE] [varchar](100) NULL,
+	[LACRE] [varchar](100) NULL,
+	[CLASSIFICACAO_COMPLEXIDADE] [varchar](100) NULL,
+	[OBSERVAÇÃO_MODELAGEM] [varchar](100) NULL,
+	[APROVACAO_PRODUTO] [varchar](100) NULL,
+	[APROVACAO_MODELAGEM] [varchar](100) NULL,
+	[APROVACAO_QUALIDADE] [varchar](100) NULL,
+	[OBS_PRODUTO] [varchar](100) NULL,
+	[MATERIAL_1] [varchar](100) NULL,
+	[COMPOSICAO_1] [varchar](100) NULL,
+	[GRAMATURA_1] [varchar](100) NULL,
+	[UNIDADE_1] [varchar](100) NULL,
+	[MATERIAL_2] [varchar](100) NULL,
+	[COMPOSICAO_2] [varchar](100) NULL,
+	[GRAMATURA_2] [varchar](100) NULL,
+	[UNIDADE_2] [varchar](100) NULL,
+	[MATERIAL_3] [varchar](100) NULL,
+	[COMPOSICAO_3] [varchar](100) NULL,
+	[GRAMATURA_3] [varchar](100) NULL,
+	[UNIDADE_3] [varchar](100) NULL,
+	[MAT_CALCADO_INTERNO] [varchar](100) NULL,
+	[MAT_CALCADO_EXTERNO] [varchar](100) NULL,
+	[MAT_OPCOES_EXTERNO] [varchar](100) NULL,
+	[MAT_CALCADO_MP_SOLADO] [varchar](100) NULL,
+	[MAT_DETALHAMENTO] [varchar](100) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[PRODUTO] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+

@@ -1,0 +1,80 @@
+select * from estoque_prod_ent where nome_clifor = 'komport' and emissao > '20230515'
+lx_processos
+
+
+
+select * from VENDAS_PROD_EMBALADO where produto = 'B0060008'
+select ERP_CUPS_PROCESSO_CCF_CCA,* 
+from compras C
+--INNER JOIN ESTOQUE_PROD_ENT E ON E.PEDIDO = C.PEDIDO
+where ERP_CUPS_PROCESSO_CCF_CCA = '0027/23'
+
+SELECT *
+from compras 
+where pedido in
+('09953W21'
+,'09953W8'
+,'09954W21'
+,'302844'
+,'302844E'
+,'302847E'
+,'302851'
+,'302851E1'
+,'304081'
+,'304083'
+,'304084'
+,'304085'
+,'307228'
+,'307235'
+,'307267'
+,'307272'
+,'307276'
+,'307280'
+,'307281'
+,'307288'
+,'307292'
+,'307299'
+,'307304'
+,'307321'
+,'307324'
+,'309953')
+
+
+select * from entradas where nf_entrada = '000267834'
+
+csm_cae_importa_entradas
+
+
+select * from CSM_TRANSITO_NOTAS where nf_entrada = '000267834'
+
+
+exec CGP_TRANSFERE_VENDA_ATACADO_NAVEGANTES '000267834'
+CSM_CAE_FATURAMENTO_ESPELHO
+
+
+select * 
+--update a set DATA_SALDO_PA = '20230731'
+from CM_DATA_FECHAMENTO a
+
+
+
+SELECT * FROM FATURAMENTO_CAIXAS   WHERE CAIXA IN (SELECT CAIXA FROM PDA_TB_PEDIDO_FATURATAMENTO)
+SELECT * FROM VENDAS_PROD_EMBALADO WHERE CAIXA IN (SELECT CAIXA FROM PDA_TB_PEDIDO_FATURATAMENTO)
+
+
+
+CREATE TABLE dbo.PDA_TB_PEDIDO_FATURAMENTO(
+    PEDIDO varchar(40) NOT NULL,
+    COD_ORIGEM varchar(60) NULL,
+    DESC_ORIGEM varchar(160) NULL,
+    COD_DESTINO varchar(60) NULL,
+    DESC_DESTINO varchar(160) NULL,
+    CAIXA varchar(12) NULL,
+    PRODUTO varchar(25) NULL,
+    COR_PRODUTO varchar(25) NULL,
+    TAMANHO varchar(25) NULL,
+    GRADE varchar(25) NULL,
+    QUANTIDADE bigint NULL,
+    DATA_ENVIO datetime NULL,
+    DATA_PROCESSAMENTO datetime NULL
+)

@@ -1,0 +1,279 @@
+declare @saida table (
+TIPOMOVTO varchar(150) null
+, DOC varchar(150) null
+,  PRODUTO varchar(12) null
+, COR_PRODUTO varchar(6) null
+, DESC_COR_PRODUTO varchar(70) null
+, FILIAL varchar(25) null
+, EMISSAO datetime null
+, OP_PED_ROMAN varchar(200) null
+, TT_MOV int null
+, EN_1 int null
+, EN_2 int null
+, EN_3 int null
+, EN_4 int null
+, EN_5 int null
+, EN_6 int null
+, EN_7 int null
+, EN_8 int null
+, EN_9 int null
+, EN_10 int null
+, EN_11 int null
+, EN_12 int null
+, EN_13 int null
+, EN_14 int null
+, EN_15 int null
+, EN_16 int null
+, EN_17 int null
+, EN_18 int null
+, EN_19 int null
+, EN_20 int null
+, EN_21 int null
+, EN_22 int null
+, EN_23 int null
+, EN_24 int null
+, EN_25 int null
+, EN_26 int null
+, EN_27 int null
+, EN_28 int null
+, EN_29 int null
+, EN_30 int null
+, EN_31 int null
+, EN_32 int null
+, EN_33 int null
+, EN_34 int null
+, EN_35 int null
+, EN_36 int null
+, EN_37 int null
+, EN_38 int null
+, EN_39 int null
+, EN_40 int null
+, EN_41 int null
+, EN_42 int null
+, EN_43 int null
+, EN_44 int null
+, EN_45 int null
+, EN_46 int null
+, EN_47 int null
+, EN_48 int null
+, TT_SALDO int null
+, SALDO1 int null
+, SALDO2 int null
+, SALDO3 int null
+, SALDO4 int null
+, SALDO5 int null
+, SALDO6 int null
+, SALDO7 int null
+, SALDO8 int null
+, SALDO9 int null
+, SALDO10 int null
+, SALDO11 int null
+, SALDO12 int null
+, SALDO13 int null
+, SALDO14 int null
+, SALDO15 int null
+, SALDO16 int null
+, SALDO17 int null
+, SALDO18 int null
+, SALDO19 int null
+, SALDO20 int null
+, SALDO21 int null
+, SALDO22 int null
+, SALDO23 int null
+, SALDO24 int null
+, SALDO25 int null
+, SALDO26 int null
+, SALDO27 int null
+, SALDO28 int null
+, SALDO29 int null
+, SALDO30 int null
+, SALDO31 int null
+, SALDO32 int null
+, SALDO33 int null
+, SALDO34 int null
+, SALDO35 int null
+, SALDO36 int null
+, SALDO37 int null
+, SALDO38 int null
+, SALDO39 int null
+, SALDO40 int null
+, SALDO41 int null
+, SALDO42 int null
+, SALDO43 int null
+, SALDO44 int null
+, SALDO45 int null
+, SALDO46 int null
+, SALDO47 int null
+, SALDO48 int null
+, PRECO numeric(14,2) null
+, VALOR numeric(14,2) null
+, FRETE_SEGURO_ENCARGO  numeric(14,2) null
+, DESCONTO  numeric(14,2) null
+,  ICMS_VALOR  numeric(14,2) null
+,  IPI_VALOR   numeric(14,2) null
+,  COFINS_VALOR  numeric(14,2) null
+, PIS_VALOR  numeric(14,2) null
+, DESP_IMPORT  numeric(14,2) null
+,  CONTA_CONTABIL_COMPRA  varchar(50) null
+, CONTA_CONTABIL  varchar(50) null
+, CONTA_CONTABIL_MOVIMENTO  varchar(50) null
+, RATEIO_CENTRO_CUSTO  varchar(50) null
+, RATEIO_FILIAL  varchar(50) null
+, NATUREZA  varchar(50) null
+,   DESC_NATUREZA   varchar(50) null
+,   CTB_TIPO_OPERACAO  varchar(50) null
+, DESC_TIPO_OPERACAO  varchar(50) null
+, TIPO_OPERACAO  varchar(50) null
+, DESC_GRUPO_TIPO_OPERACAO varchar(50) null)
+
+
+declare @tab1 table (id int identity(1,1) primary key, produto varchar(8), cor_produto varchar(6))
+--insert into @tab1 (produto,cor_produto) values ('01230666','00065')
+--insert into @tab1 (produto,cor_produto) values ('13090176','00003')
+--insert into @tab1 (produto,cor_produto) values ('13090177','00158')
+--insert into @tab1 (produto,cor_produto) values ('13090178','00004')
+--insert into @tab1 (produto,cor_produto) values ('18130028','00160')
+--insert into @tab1 (produto,cor_produto) values ('18130042','00065')
+--insert into @tab1 (produto,cor_produto) values ('23110007','00029')
+--insert into @tab1 (produto,cor_produto) values ('23110008','00029')
+--insert into @tab1 (produto,cor_produto) values ('23110009','00029')
+--insert into @tab1 (produto,cor_produto) values ('23110010','00029')
+--insert into @tab1 (produto,cor_produto) values ('23120002','00029')
+--insert into @tab1 (produto,cor_produto) values ('23120005','00029')
+--insert into @tab1 (produto,cor_produto) values ('24020397','00103')
+--insert into @tab1 (produto,cor_produto) values ('34016186','00029')
+--insert into @tab1 (produto,cor_produto) values ('45460762','00211')
+--insert into @tab1 (produto,cor_produto) values ('45460764','00066')
+--insert into @tab1 (produto,cor_produto) values ('45460818','00029')
+--insert into @tab1 (produto,cor_produto) values ('52120029','00029')
+--insert into @tab1 (produto,cor_produto) values ('52120030','00029')
+--insert into @tab1 (produto,cor_produto) values ('53040208','00003')
+--insert into @tab1 (produto,cor_produto) values ('55040153','00003')
+--insert into @tab1 (produto,cor_produto) values ('61040003','00065')
+--insert into @tab1 (produto,cor_produto) values ('62060013','00029')
+--insert into @tab1 (produto,cor_produto) values ('70042385','00003')
+--insert into @tab1 (produto,cor_produto) values ('70058514','00004')
+--insert into @tab1 (produto,cor_produto) values ('70058602','00107')
+--insert into @tab1 (produto,cor_produto) values ('70240218','00003')
+--insert into @tab1 (produto,cor_produto) values ('70470006','00113')
+--insert into @tab1 (produto,cor_produto) values ('70470023','00004')
+--insert into @tab1 (produto,cor_produto) values ('70490001','00003')
+--insert into @tab1 (produto,cor_produto) values ('70490004','00075')
+--insert into @tab1 (produto,cor_produto) values ('70670002','00003')
+--insert into @tab1 (produto,cor_produto) values ('C4450039','00003')
+--insert into @tab1 (produto,cor_produto) values ('C5080081','00088')
+--insert into @tab1 (produto,cor_produto) values ('C8090057','00004')
+--insert into @tab1 (produto,cor_produto) values ('D5050030','00003')
+--insert into @tab1 (produto,cor_produto) values ('D5050031','00158')
+--insert into @tab1 (produto,cor_produto) values ('D5080011','00103')
+--insert into @tab1 (produto,cor_produto) values ('F4010027','00088')
+--insert into @tab1 (produto,cor_produto) values ('F5010033','00029')
+--insert into @tab1 (produto,cor_produto) values ('H1020060','00203')
+--insert into @tab1 (produto,cor_produto) values ('M3020040','00103')
+--insert into @tab1 (produto,cor_produto) values ('R3010029','00203')
+--insert into @tab1 (produto,cor_produto) values ('S2020019','00004')
+--insert into @tab1 (produto,cor_produto) values ('Z2010067','9')
+--insert into @tab1 (produto,cor_produto) values ('Z6020048','00067')
+--insert into @tab1 (produto,cor_produto) values ('Z6020074','00026')
+--insert into @tab1 (produto,cor_produto) values ('Z6090028','00204')
+--insert into @tab1 (produto,cor_produto) values ('Z7010025','00203')
+insert into @tab1 (produto,cor_produto) values ('70058514','00003')
+insert into @tab1 (produto,cor_produto) values ('70240218','00113')
+
+declare @i int, @tot int
+select @i=MIN(id), @tot=MAX(id)
+from @tab1
+
+declare @produto varchar(8), @cor_produto varchar(6), @filial varchar(25)
+
+
+while @i <= @tot 
+begin 
+	select  
+			@produto = produto
+			,@cor_produto = cor_produto
+			,@filial = 'ITAQUERA'
+	from @tab1 where id=@i
+
+	;with base (TIPOMOVTO, DOC,  PRODUTO, COR_PRODUTO, 
+	DESC_COR_PRODUTO, FILIAL, EMISSAO, OP_PED_ROMAN, TT_MOV, 
+	EN_1, EN_2, EN_3, EN_4, EN_5, EN_6, EN_7, EN_8, EN_9, EN_10, EN_11, EN_12, EN_13, EN_14, 
+	EN_15, EN_16, EN_17, EN_18, EN_19, EN_20, EN_21, EN_22, EN_23, EN_24, EN_25, EN_26, EN_27, 
+	EN_28, EN_29, EN_30, EN_31, EN_32, EN_33, EN_34, EN_35, EN_36, EN_37, EN_38, EN_39, EN_40, 
+	EN_41, EN_42, EN_43, EN_44, EN_45, EN_46, EN_47, EN_48, TT_SALDO, SALDO1, SALDO2, SALDO3, 
+	SALDO4, SALDO5, SALDO6, SALDO7, SALDO8, SALDO9, SALDO10, SALDO11, SALDO12, SALDO13, SALDO14, 
+	SALDO15, SALDO16, SALDO17, SALDO18, SALDO19, SALDO20, SALDO21, SALDO22, SALDO23, SALDO24, 
+	SALDO25, SALDO26, SALDO27, SALDO28, SALDO29, SALDO30, SALDO31, SALDO32, SALDO33, SALDO34, 
+	SALDO35, SALDO36, SALDO37, SALDO38, SALDO39, SALDO40, SALDO41, SALDO42, SALDO43, SALDO44, 
+	SALDO45, SALDO46, SALDO47, SALDO48, PRECO, VALOR, FRETE_SEGURO_ENCARGO , DESCONTO ,  
+	ICMS_VALOR ,  IPI_VALOR  ,  COFINS_VALOR , PIS_VALOR , DESP_IMPORT ,  CONTA_CONTABIL_COMPRA , 
+	CONTA_CONTABIL , CONTA_CONTABIL_MOVIMENTO , RATEIO_CENTRO_CUSTO , RATEIO_FILIAL , NATUREZA ,   
+	DESC_NATUREZA  ,   CTB_TIPO_OPERACAO , DESC_TIPO_OPERACAO , TIPO_OPERACAO , DESC_GRUPO_TIPO_OPERACAO )
+	as (
+	SELECT TIPOMOVTO, DOC, FX_MONTA_CARDEX_PA.PRODUTO, FX_MONTA_CARDEX_PA.COR_PRODUTO, 
+	PRODUTO_CORES.DESC_COR_PRODUTO, FILIAL, EMISSAO, OP_PED_ROMAN, TT_MOV, 
+	EN_1, EN_2, EN_3, EN_4, EN_5, EN_6, EN_7, EN_8, EN_9, EN_10, EN_11, EN_12, EN_13, EN_14, 
+	EN_15, EN_16, EN_17, EN_18, EN_19, EN_20, EN_21, EN_22, EN_23, EN_24, EN_25, EN_26, EN_27, 
+	EN_28, EN_29, EN_30, EN_31, EN_32, EN_33, EN_34, EN_35, EN_36, EN_37, EN_38, EN_39, EN_40, 
+	EN_41, EN_42, EN_43, EN_44, EN_45, EN_46, EN_47, EN_48, TT_SALDO, SALDO1, SALDO2, SALDO3, 
+	SALDO4, SALDO5, SALDO6, SALDO7, SALDO8, SALDO9, SALDO10, SALDO11, SALDO12, SALDO13, SALDO14, 
+	SALDO15, SALDO16, SALDO17, SALDO18, SALDO19, SALDO20, SALDO21, SALDO22, SALDO23, SALDO24, 
+	SALDO25, SALDO26, SALDO27, SALDO28, SALDO29, SALDO30, SALDO31, SALDO32, SALDO33, SALDO34, 
+	SALDO35, SALDO36, SALDO37, SALDO38, SALDO39, SALDO40, SALDO41, SALDO42, SALDO43, SALDO44, 
+	SALDO45, SALDO46, SALDO47, SALDO48, PRECO, VALOR, FRETE_SEGURO_ENCARGO , DESCONTO ,  
+	ICMS_VALOR ,  IPI_VALOR  ,  COFINS_VALOR , PIS_VALOR , DESP_IMPORT ,  CONTA_CONTABIL_COMPRA , 
+	CONTA_CONTABIL , CONTA_CONTABIL_MOVIMENTO , RATEIO_CENTRO_CUSTO , RATEIO_FILIAL , NATUREZA ,   
+	DESC_NATUREZA  ,   CTB_TIPO_OPERACAO , DESC_TIPO_OPERACAO , TIPO_OPERACAO , DESC_GRUPO_TIPO_OPERACAO 
+	FROM FX_MONTA_CARDEX_PA(@produto, @cor_produto, @filial, 0) 
+	JOIN PRODUTO_CORES ON PRODUTO_CORES.PRODUTO = FX_MONTA_CARDEX_PA.PRODUTO AND PRODUTO_CORES.COR_PRODUTO = FX_MONTA_CARDEX_PA.COR_PRODUTO  
+	)
+	
+	insert into @saida 
+	select TIPOMOVTO, DOC,  PRODUTO, COR_PRODUTO, 
+	DESC_COR_PRODUTO, FILIAL, EMISSAO, OP_PED_ROMAN, TT_MOV, 
+	EN_1, EN_2, EN_3, EN_4, EN_5, EN_6, EN_7, EN_8, EN_9, EN_10, EN_11, EN_12, EN_13, EN_14, 
+	EN_15, EN_16, EN_17, EN_18, EN_19, EN_20, EN_21, EN_22, EN_23, EN_24, EN_25, EN_26, EN_27, 
+	EN_28, EN_29, EN_30, EN_31, EN_32, EN_33, EN_34, EN_35, EN_36, EN_37, EN_38, EN_39, EN_40, 
+	EN_41, EN_42, EN_43, EN_44, EN_45, EN_46, EN_47, EN_48, TT_SALDO, SALDO1, SALDO2, SALDO3, 
+	SALDO4, SALDO5, SALDO6, SALDO7, SALDO8, SALDO9, SALDO10, SALDO11, SALDO12, SALDO13, SALDO14, 
+	SALDO15, SALDO16, SALDO17, SALDO18, SALDO19, SALDO20, SALDO21, SALDO22, SALDO23, SALDO24, 
+	SALDO25, SALDO26, SALDO27, SALDO28, SALDO29, SALDO30, SALDO31, SALDO32, SALDO33, SALDO34, 
+	SALDO35, SALDO36, SALDO37, SALDO38, SALDO39, SALDO40, SALDO41, SALDO42, SALDO43, SALDO44, 
+	SALDO45, SALDO46, SALDO47, SALDO48, PRECO, VALOR, FRETE_SEGURO_ENCARGO , DESCONTO ,  
+	ICMS_VALOR ,  IPI_VALOR  ,  COFINS_VALOR , PIS_VALOR , DESP_IMPORT ,  CONTA_CONTABIL_COMPRA , 
+	CONTA_CONTABIL , CONTA_CONTABIL_MOVIMENTO , RATEIO_CENTRO_CUSTO , RATEIO_FILIAL , NATUREZA ,   
+	DESC_NATUREZA  ,   CTB_TIPO_OPERACAO , DESC_TIPO_OPERACAO , TIPO_OPERACAO , DESC_GRUPO_TIPO_OPERACAO
+	from base
+	ORDER BY EMISSAO, TIPOMOVTO, DOC, FILIAL, PRODUTO, COR_PRODUTO,  OP_PED_ROMAN
+
+	
+	set @i += 1
+end
+
+select  
+TIPOMOVTO,
+DOC,
+PRODUTO,
+COR_PRODUTO,
+DESC_COR_PRODUTO,
+FILIAL,
+EMISSAO,
+OP_PED_ROMAN,
+TT_MOV,
+EN_1,
+EN_2,
+EN_3,
+EN_4,
+EN_5,
+EN_6,
+EN_7,
+EN_8,
+EN_9,
+EN_10,
+EN_11,
+EN_12,
+EN_13,
+EN_14,
+EN_15,
+EN_16
+from @saida

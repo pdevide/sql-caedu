@@ -1,0 +1,43 @@
+select 
+	a.ROMANEIO_PRODUTO,
+	a.filial as loja,
+	CODIGO_LOJA
+	a.emissao as data,
+	a.enb_terminal as ecf,
+	a.enb_coo as cupom,
+	b.qtde,
+	b.valor,
+	b.produto, 
+	b.cor_produto,
+	b.enb_codigo_barra as codigo_barra,
+	a.NF_ENTRADA,
+	a.SERIE_NF_ENTRADA,
+	EN_1 as EN1,
+	EN_2 as EN2,
+	EN_3 as EN3,
+	EN_4 as EN4,
+	EN_5 as EN5,
+	EN_6 as EN6,
+	EN_7 as EN7,
+	EN_8 as EN8,
+	EN_9 as EN9,
+	EN_10 asEN10,
+	EN_11 asEN11,
+	EN_12 as EN12,
+	EN_13 as EN13,
+	EN_14 as EN14,
+	EN_15 as EN15,
+	EN_16 as EN16
+
+from estoque_prod_ent a
+inner join 
+	estoque_prod1_ent b
+		on b.romaneio_produto = a.romaneio_produto and b.filial = a.filial
+where 
+	a.ROMANEIO_PRODUTO <> ''  
+	and (a.emissao between '20151001' and '20170430')
+	and a.RESPONSAVEL = 'INTEGRAÇÃO.EMSEMBLE' 
+	and a.CM_OPERACAO = '005' 
+	and a.TIPO_ROMANEIO = 'DEVOLUCAO DE VENDA'
+	--and a.NF_ENTRADA is not null
+	

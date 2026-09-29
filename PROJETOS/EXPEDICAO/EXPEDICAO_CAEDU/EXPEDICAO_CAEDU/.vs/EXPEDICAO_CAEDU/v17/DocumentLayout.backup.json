@@ -1,0 +1,222 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\paulo.devide\\OneDrive - Caedu \u00E9 Mais para voc\u00EA\\SQL\\PROJETOS\\EXPEDICAO\\EXPEDICAO_CAEDU\\EXPEDICAO_CAEDU\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\paulo.devide\\OneDrive - Caedu \u00E9 Mais para voc\u00EA\\SQL\\PROJETOS\\EXPEDICAO\\EXPEDICAO_CAEDU\\EXPEDICAO_CAEDU\\QUERY FIXA 2.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QUERY FIXA 2.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13958BA1-3DB6-7B90-A7DB-CB912B8CF47F}|EXPEDICAO_CAEDU.ssmssqlproj|C:\\Users\\paulo.devide\\OneDrive - Caedu \u00E9 Mais para voc\u00EA\\SQL\\PROJETOS\\EXPEDICAO\\EXPEDICAO_CAEDU\\EXPEDICAO_CAEDU\\CORRIGE EXPEDICAO.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}",
+      "RelativeMoniker": "D:0:0:{13958BA1-3DB6-7B90-A7DB-CB912B8CF47F}|EXPEDICAO_CAEDU.ssmssqlproj|solutionrelative:CORRIGE EXPEDICAO.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13958BA1-3DB6-7B90-A7DB-CB912B8CF47F}|EXPEDICAO_CAEDU.ssmssqlproj|C:\\Users\\paulo.devide\\OneDrive - Caedu \u00E9 Mais para voc\u00EA\\SQL\\PROJETOS\\EXPEDICAO\\EXPEDICAO_CAEDU\\EXPEDICAO_CAEDU\\CSV3.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}",
+      "RelativeMoniker": "D:0:0:{13958BA1-3DB6-7B90-A7DB-CB912B8CF47F}|EXPEDICAO_CAEDU.ssmssqlproj|solutionrelative:CSV3.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13958BA1-3DB6-7B90-A7DB-CB912B8CF47F}|EXPEDICAO_CAEDU.ssmssqlproj|C:\\Users\\paulo.devide\\OneDrive - Caedu \u00E9 Mais para voc\u00EA\\SQL\\PROJETOS\\EXPEDICAO\\EXPEDICAO_CAEDU\\EXPEDICAO_CAEDU\\CSV4.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}",
+      "RelativeMoniker": "D:0:0:{13958BA1-3DB6-7B90-A7DB-CB912B8CF47F}|EXPEDICAO_CAEDU.ssmssqlproj|solutionrelative:CSV4.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13958BA1-3DB6-7B90-A7DB-CB912B8CF47F}|EXPEDICAO_CAEDU.ssmssqlproj|C:\\Users\\paulo.devide\\OneDrive - Caedu \u00E9 Mais para voc\u00EA\\SQL\\PROJETOS\\EXPEDICAO\\EXPEDICAO_CAEDU\\EXPEDICAO_CAEDU\\CSV.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}",
+      "RelativeMoniker": "D:0:0:{13958BA1-3DB6-7B90-A7DB-CB912B8CF47F}|EXPEDICAO_CAEDU.ssmssqlproj|solutionrelative:CSV.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13958BA1-3DB6-7B90-A7DB-CB912B8CF47F}|EXPEDICAO_CAEDU.ssmssqlproj|C:\\Users\\paulo.devide\\OneDrive - Caedu \u00E9 Mais para voc\u00EA\\SQL\\PROJETOS\\EXPEDICAO\\EXPEDICAO_CAEDU\\EXPEDICAO_CAEDU\\SQLQuery10.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}",
+      "RelativeMoniker": "D:0:0:{13958BA1-3DB6-7B90-A7DB-CB912B8CF47F}|EXPEDICAO_CAEDU.ssmssqlproj|solutionrelative:SQLQuery10.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13958BA1-3DB6-7B90-A7DB-CB912B8CF47F}|EXPEDICAO_CAEDU.ssmssqlproj|C:\\Users\\paulo.devide\\OneDrive - Caedu \u00E9 Mais para voc\u00EA\\SQL\\PROJETOS\\EXPEDICAO\\EXPEDICAO_CAEDU\\EXPEDICAO_CAEDU\\ARRUMAR COR TROCADA DE DISTRIBUICAO.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}",
+      "RelativeMoniker": "D:0:0:{13958BA1-3DB6-7B90-A7DB-CB912B8CF47F}|EXPEDICAO_CAEDU.ssmssqlproj|solutionrelative:ARRUMAR COR TROCADA DE DISTRIBUICAO.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13958BA1-3DB6-7B90-A7DB-CB912B8CF47F}|EXPEDICAO_CAEDU.ssmssqlproj|C:\\Users\\paulo.devide\\OneDrive - Caedu \u00E9 Mais para voc\u00EA\\SQL\\PROJETOS\\EXPEDICAO\\EXPEDICAO_CAEDU\\EXPEDICAO_CAEDU\\VERIFICA DETALHE.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}",
+      "RelativeMoniker": "D:0:0:{13958BA1-3DB6-7B90-A7DB-CB912B8CF47F}|EXPEDICAO_CAEDU.ssmssqlproj|solutionrelative:VERIFICA DETALHE.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13958BA1-3DB6-7B90-A7DB-CB912B8CF47F}|EXPEDICAO_CAEDU.ssmssqlproj|C:\\Users\\paulo.devide\\OneDrive - Caedu \u00E9 Mais para voc\u00EA\\SQL\\PROJETOS\\EXPEDICAO\\EXPEDICAO_CAEDU\\EXPEDICAO_CAEDU\\CSV 5.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}",
+      "RelativeMoniker": "D:0:0:{13958BA1-3DB6-7B90-A7DB-CB912B8CF47F}|EXPEDICAO_CAEDU.ssmssqlproj|solutionrelative:CSV 5.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13958BA1-3DB6-7B90-A7DB-CB912B8CF47F}|EXPEDICAO_CAEDU.ssmssqlproj|C:\\Users\\paulo.devide\\OneDrive - Caedu \u00E9 Mais para voc\u00EA\\SQL\\PROJETOS\\EXPEDICAO\\EXPEDICAO_CAEDU\\EXPEDICAO_CAEDU\\VERIFICA ROMANEIO.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}",
+      "RelativeMoniker": "D:0:0:{13958BA1-3DB6-7B90-A7DB-CB912B8CF47F}|EXPEDICAO_CAEDU.ssmssqlproj|solutionrelative:VERIFICA ROMANEIO.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13958BA1-3DB6-7B90-A7DB-CB912B8CF47F}|EXPEDICAO_CAEDU.ssmssqlproj|C:\\Users\\paulo.devide\\OneDrive - Caedu \u00E9 Mais para voc\u00EA\\SQL\\PROJETOS\\EXPEDICAO\\EXPEDICAO_CAEDU\\EXPEDICAO_CAEDU\\CONSERTA CAGADA DE VENDAS_PROD_EMBALADO DELETADO COM VENDAS_PRODUTO INTEGRO.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}",
+      "RelativeMoniker": "D:0:0:{13958BA1-3DB6-7B90-A7DB-CB912B8CF47F}|EXPEDICAO_CAEDU.ssmssqlproj|solutionrelative:CONSERTA CAGADA DE VENDAS_PROD_EMBALADO DELETADO COM VENDAS_PRODUTO INTEGRO.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13958BA1-3DB6-7B90-A7DB-CB912B8CF47F}|EXPEDICAO_CAEDU.ssmssqlproj|C:\\Users\\paulo.devide\\OneDrive - Caedu \u00E9 Mais para voc\u00EA\\SQL\\PROJETOS\\EXPEDICAO\\EXPEDICAO_CAEDU\\EXPEDICAO_CAEDU\\CSV2.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}",
+      "RelativeMoniker": "D:0:0:{13958BA1-3DB6-7B90-A7DB-CB912B8CF47F}|EXPEDICAO_CAEDU.ssmssqlproj|solutionrelative:CSV2.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13958BA1-3DB6-7B90-A7DB-CB912B8CF47F}|EXPEDICAO_CAEDU.ssmssqlproj|C:\\Users\\paulo.devide\\OneDrive - Caedu \u00E9 Mais para voc\u00EA\\SQL\\PROJETOS\\EXPEDICAO\\EXPEDICAO_CAEDU\\EXPEDICAO_CAEDU\\CONSULTA_FIXA_PRD.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}",
+      "RelativeMoniker": "D:0:0:{13958BA1-3DB6-7B90-A7DB-CB912B8CF47F}|EXPEDICAO_CAEDU.ssmssqlproj|solutionrelative:CONSULTA_FIXA_PRD.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CORRIGE EXPEDICAO.sql - dblinx.CAEDU (CCP\\paulo.devide (239))",
+              "DocumentMoniker": "C:\\Users\\paulo.devide\\OneDrive - Caedu \u00E9 Mais para voc\u00EA\\SQL\\PROJETOS\\EXPEDICAO\\EXPEDICAO_CAEDU\\EXPEDICAO_CAEDU\\CORRIGE EXPEDICAO.sql",
+              "RelativeDocumentMoniker": "CORRIGE EXPEDICAO.sql",
+              "ToolTip": "CORRIGE EXPEDICAO.sql - dblinx.CAEDU (CCP\\paulo.devide (239))",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-10-28T21:37:33.723Z",
+              "IsPinned": true,
+              "EditorCaption": " - dblinx.CAEDU (CCP\\paulo.devide (239))"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CSV2.sql - dblinx.CAEDU (CCP\\paulo.devide (327))",
+              "DocumentMoniker": "C:\\Users\\paulo.devide\\OneDrive - Caedu \u00E9 Mais para voc\u00EA\\SQL\\PROJETOS\\EXPEDICAO\\EXPEDICAO_CAEDU\\EXPEDICAO_CAEDU\\CSV2.sql",
+              "RelativeDocumentMoniker": "CSV2.sql",
+              "ToolTip": "CSV2.sql - dblinx.CAEDU (CCP\\paulo.devide (327))",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-11-12T20:14:19.41Z",
+              "IsPinned": true,
+              "EditorCaption": " - dblinx.CAEDU (CCP\\paulo.devide (327))"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CONSERTA CAGADA DE VENDAS_PROD_EMBALADO DELETADO COM VENDAS_PRODUTO INTEGRO.sql - dblinx.CAEDU (CCP\\paulo.devide (345))",
+              "DocumentMoniker": "C:\\Users\\paulo.devide\\OneDrive - Caedu \u00E9 Mais para voc\u00EA\\SQL\\PROJETOS\\EXPEDICAO\\EXPEDICAO_CAEDU\\EXPEDICAO_CAEDU\\CONSERTA CAGADA DE VENDAS_PROD_EMBALADO DELETADO COM VENDAS_PRODUTO INTEGRO.sql",
+              "RelativeDocumentMoniker": "CONSERTA CAGADA DE VENDAS_PROD_EMBALADO DELETADO COM VENDAS_PRODUTO INTEGRO.sql",
+              "ToolTip": "CONSERTA CAGADA DE VENDAS_PROD_EMBALADO DELETADO COM VENDAS_PRODUTO INTEGRO.sql - dblinx.CAEDU (CCP\\paulo.devide (345))",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-10-28T21:37:54.994Z",
+              "IsPinned": true,
+              "EditorCaption": " - dblinx.CAEDU (CCP\\paulo.devide (345))"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CONSULTA_FIXA_PRD.sql - dblinx.CAEDU (CCP\\paulo.devide (297))",
+              "DocumentMoniker": "C:\\Users\\paulo.devide\\OneDrive - Caedu \u00E9 Mais para voc\u00EA\\SQL\\PROJETOS\\EXPEDICAO\\EXPEDICAO_CAEDU\\EXPEDICAO_CAEDU\\CONSULTA_FIXA_PRD.sql",
+              "RelativeDocumentMoniker": "CONSULTA_FIXA_PRD.sql",
+              "ToolTip": "CONSULTA_FIXA_PRD.sql - dblinx.CAEDU (CCP\\paulo.devide (297))",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-11-28T18:45:05.04Z",
+              "IsPinned": true,
+              "EditorCaption": " - dblinx.CAEDU (CCP\\paulo.devide (297))"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "VERIFICA ROMANEIO.sql - dblinx.CAEDU (CCP\\paulo.devide (252))",
+              "DocumentMoniker": "C:\\Users\\paulo.devide\\OneDrive - Caedu \u00E9 Mais para voc\u00EA\\SQL\\PROJETOS\\EXPEDICAO\\EXPEDICAO_CAEDU\\EXPEDICAO_CAEDU\\VERIFICA ROMANEIO.sql",
+              "RelativeDocumentMoniker": "VERIFICA ROMANEIO.sql",
+              "ToolTip": "VERIFICA ROMANEIO.sql - dblinx.CAEDU (CCP\\paulo.devide (252))",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-12-03T17:17:52.791Z",
+              "IsPinned": true,
+              "EditorCaption": " - dblinx.CAEDU (CCP\\paulo.devide (252))"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CSV 5.sql - dblinx.CAEDU (CCP\\paulo.devide (277))",
+              "DocumentMoniker": "C:\\Users\\paulo.devide\\OneDrive - Caedu \u00E9 Mais para voc\u00EA\\SQL\\PROJETOS\\EXPEDICAO\\EXPEDICAO_CAEDU\\EXPEDICAO_CAEDU\\CSV 5.sql",
+              "RelativeDocumentMoniker": "CSV 5.sql",
+              "ToolTip": "CSV 5.sql - dblinx.CAEDU (CCP\\paulo.devide (277))",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2026-02-09T13:24:47.732Z",
+              "IsPinned": true,
+              "EditorCaption": " - dblinx.CAEDU (CCP\\paulo.devide (277))"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "QUERY FIXA 2.sql - dblinx.CAEDU (CCP\\paulo.devide (445))",
+              "DocumentMoniker": "C:\\Users\\paulo.devide\\OneDrive - Caedu \u00E9 Mais para voc\u00EA\\SQL\\PROJETOS\\EXPEDICAO\\EXPEDICAO_CAEDU\\EXPEDICAO_CAEDU\\QUERY FIXA 2.sql",
+              "RelativeDocumentMoniker": "QUERY FIXA 2.sql",
+              "ToolTip": "C:\\Users\\paulo.devide\\OneDrive - Caedu \u00E9 Mais para voc\u00EA\\SQL\\PROJETOS\\EXPEDICAO\\EXPEDICAO_CAEDU\\EXPEDICAO_CAEDU\\QUERY FIXA 2.sql - dblinx.CAEDU (CCP\\paulo.devide (445))",
+              "RelativeToolTip": "QUERY FIXA 2.sql - dblinx.CAEDU (CCP\\paulo.devide (445))",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2026-02-12T18:50:04.497Z",
+              "EditorCaption": " - dblinx.CAEDU (CCP\\paulo.devide (445))"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "VERIFICA DETALHE.sql - dblinx.CAEDU (CCP\\paulo.devide (320))",
+              "DocumentMoniker": "C:\\Users\\paulo.devide\\OneDrive - Caedu \u00E9 Mais para voc\u00EA\\SQL\\PROJETOS\\EXPEDICAO\\EXPEDICAO_CAEDU\\EXPEDICAO_CAEDU\\VERIFICA DETALHE.sql",
+              "RelativeDocumentMoniker": "VERIFICA DETALHE.sql",
+              "ToolTip": "VERIFICA DETALHE.sql - dblinx.CAEDU (CCP\\paulo.devide (320))",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-12-22T13:13:38.559Z",
+              "EditorCaption": " - dblinx.CAEDU (CCP\\paulo.devide (320))"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ARRUMAR COR TROCADA DE DISTRIBUICAO.sql - dblinx.CAEDU (CCP\\paulo.devide (281))",
+              "DocumentMoniker": "C:\\Users\\paulo.devide\\OneDrive - Caedu \u00E9 Mais para voc\u00EA\\SQL\\PROJETOS\\EXPEDICAO\\EXPEDICAO_CAEDU\\EXPEDICAO_CAEDU\\ARRUMAR COR TROCADA DE DISTRIBUICAO.sql",
+              "RelativeDocumentMoniker": "ARRUMAR COR TROCADA DE DISTRIBUICAO.sql",
+              "ToolTip": "ARRUMAR COR TROCADA DE DISTRIBUICAO.sql - dblinx.CAEDU (CCP\\paulo.devide (281))",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-12-17T13:01:45.519Z",
+              "EditorCaption": " - dblinx.CAEDU (CCP\\paulo.devide (281))"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SQLQuery10.sql - dblinx.CAEDU (CCP\\paulo.devide (338))",
+              "DocumentMoniker": "C:\\Users\\paulo.devide\\OneDrive - Caedu \u00E9 Mais para voc\u00EA\\SQL\\PROJETOS\\EXPEDICAO\\EXPEDICAO_CAEDU\\EXPEDICAO_CAEDU\\SQLQuery10.sql",
+              "RelativeDocumentMoniker": "SQLQuery10.sql",
+              "ToolTip": "SQLQuery10.sql - dblinx.CAEDU (CCP\\paulo.devide (338))",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-12-04T17:52:56.554Z",
+              "EditorCaption": " - dblinx.CAEDU (CCP\\paulo.devide (338))"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CSV.sql - dblinx.CAEDU (CCP\\paulo.devide (262))",
+              "DocumentMoniker": "C:\\Users\\paulo.devide\\OneDrive - Caedu \u00E9 Mais para voc\u00EA\\SQL\\PROJETOS\\EXPEDICAO\\EXPEDICAO_CAEDU\\EXPEDICAO_CAEDU\\CSV.sql",
+              "RelativeDocumentMoniker": "CSV.sql",
+              "ToolTip": "CSV.sql - dblinx.CAEDU (CCP\\paulo.devide (262))",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-11-10T17:20:41.41Z",
+              "EditorCaption": " - dblinx.CAEDU (CCP\\paulo.devide (262))"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CSV3.sql - dblinx.CAEDU (CCP\\paulo.devide (331))",
+              "DocumentMoniker": "C:\\Users\\paulo.devide\\OneDrive - Caedu \u00E9 Mais para voc\u00EA\\SQL\\PROJETOS\\EXPEDICAO\\EXPEDICAO_CAEDU\\EXPEDICAO_CAEDU\\CSV3.sql",
+              "RelativeDocumentMoniker": "CSV3.sql",
+              "ToolTip": "CSV3.sql - dblinx.CAEDU (CCP\\paulo.devide (331))",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-11-19T13:29:04.8Z",
+              "EditorCaption": " - dblinx.CAEDU (CCP\\paulo.devide (331))"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CSV4.sql - dblinx.CAEDU (CCP\\paulo.devide (272))",
+              "DocumentMoniker": "C:\\Users\\paulo.devide\\OneDrive - Caedu \u00E9 Mais para voc\u00EA\\SQL\\PROJETOS\\EXPEDICAO\\EXPEDICAO_CAEDU\\EXPEDICAO_CAEDU\\CSV4.sql",
+              "RelativeDocumentMoniker": "CSV4.sql",
+              "ToolTip": "CSV4.sql - dblinx.CAEDU (CCP\\paulo.devide (272))",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-11-24T17:06:54.862Z",
+              "EditorCaption": " - dblinx.CAEDU (CCP\\paulo.devide (272))"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+select e.NATUREZA, e.EMISSAO, e.RECEBIMENTO, ep.* 
+from ENTRADAS_PRODUTO ep
+inner join ENTRADAS e 
+	on e.NF_ENTRADA = ep.NF_ENTRADA 
+		and e.SERIE_NF_ENTRADA = ep.SERIE_NF_ENTRADA
+		and e.NOME_CLIFOR = ep.NOME_CLIFOR
+where e.EMISSAO > '20191101' and natureza like '200%'
+order by ep.NOME_CLIFOR, ep.NF_ENTRADA, ep.SERIE_NF_ENTRADA, ep.ITEM_IMPRESSAO

@@ -1,0 +1,11 @@
+SELECT * FROM SYSOBJECTS WHERE NAME LIKE 'PDA_WMS%' AND TYPE='u'
+
+select * from PDA_WMS_VW_SE_DISPONIBILIDADE_ESTOQUE where produto = '53080009'
+
+--select * from PDA_WMS_TB_ARMAZENAGEM  
+
+select * from PDA_WMS_TB_ARMAZENAGEM_PALETE where produto = '53080009'
+
+update PDA_WMS_TB_ARMAZENAGEM_PALETE 
+set 
+where produto = '53080009'

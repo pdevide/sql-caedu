@@ -1,0 +1,4 @@
+select CODIGO_BARRA, pb.PRODUTO, COR_PRODUTO, pb.TAMANHO, pb.GRADE, p.INATIVO, p.DESC_PRODUTO
+from PRODUTOS_BARRA pb
+inner join produtos p 
+	on p.PRODUTO = pb.PRODUTO

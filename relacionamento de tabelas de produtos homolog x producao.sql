@@ -1,0 +1,61 @@
+/*
+produtos (pai)
+	produto_cores
+	produtos_indicador_cfop
+	produtos_packs_permitidos
+	produtos_precos
+	prop_produtos
+	
+produtos (filha)
+	dbo.CEST_NCM->ID_CEST_NCM  ==> iguais
+
+	dbo.CLASSIF_FISCAL->CLASSIF_FISCAL ==> 1628 # 1636
+	dbo.CLIENTES_ATACADO->CLIENTE_DO_PRODUTO ==> 5356 # 6460
+
+	dbo.COLECOES->COLECAO ==> iguais
+	dbo.CTB_CONTA_PLANO->CONTA_CONTABIL_VENDA ==> iguais
+	dbo.CTB_CONTA_PLANO->CONTA_CONTABIL_COMPRA ==> iguais
+	dbo.CTB_CONTA_PLANO->CONTA_CONTABIL ==> iguais
+	dbo.CTB_CONTA_PLANO->CONTA_CONTABIL_DEV_VENDA ==> iguais
+	dbo.CTB_CONTA_PLANO->CONTA_CONTABIL_DEV_COMPRA ==> iguais
+	dbo.CTB_EXCECAO_GRUPO->ID_EXCECAO_GRUPO ==> iguais
+	dbo.CTB_LX_INDICADOR_CFOP->INDICADOR_CFOP ==> iguais
+	dbo.EMPRESA->EMPRESA ==> iguais
+
+	dbo.FORNECEDORES->FABRICANTE ==> 13223 # 14324 --> inseridos 14 utilizados
+
+	dbo.GIV_ID_PRECO->ID_PRECO ==> iguais
+	dbo.LOJAS_REDE->REDE_LOJAS ==> iguais
+	dbo.MATERIAIS->MATERIAL ==> iguais
+
+	dbo.MATERIAIS_COMPOSICAO->COMPOSICAO  ==> 330 # 342 --> inseriu 1 composição utilizada que era diferente
+
+	dbo.MATERIAIS_TIPO_LAVAGEM->RESTRICAO_LAVAGEM ==> iguais
+	dbo.ORCAMENTOS->ORCAMENTO ==> iguais
+	dbo.PRODUTOS_FLUXO->COD_FLUXO_PRODUTO ==> iguais  975783832 MAURICUO
+	dbo.PRODUTOS_GRIFFES->GRIFFE ==> iguais
+
+	dbo.PRODUTOS_LINHAS->LINHA ==> 78 # 79 --> nada a fazer
+
+	dbo.PRODUTOS_MODELO->MODELAGEM ==> iguais
+	dbo.PRODUTOS_PERIODOS_PCP->PERIODO_PCP ==> iguais
+	dbo.PRODUTOS_SEGMENTO->COD_PRODUTO_SEGMENTO ==> iguais
+	dbo.PRODUTOS_SOLUCAO->COD_PRODUTO_SOLUCAO ==> iguais
+	dbo.PRODUTOS_STATUS->STATUS_PRODUTO ==> iguais
+	dbo.PRODUTOS_SUBCATEGORIA->COD_CATEGORIA, COD_SUBCATEGORIA ==> iguais
+
+	dbo.PRODUTOS_GRUPO->GRUPO_PRODUTO --> INSERIR O GRUPO BEBE
+	dbo.PRODUTOS_SUBGRUPO->GRUPO_PRODUTO, SUBGRUPO_PRODUTO ==> 1164 # 1169
+
+	dbo.PRODUTOS_TAB_MEDIDAS->TABELA_MEDIDAS ==> iguais
+	dbo.PRODUTOS_TAB_OPERACOES->TABELA_OPERACOES ==> iguais
+
+	dbo.PRODUTOS_TAMANHOS->GRADE ==> 589 # 611
+	dbo.PRODUTOS_TIPOS->TIPO_PRODUTO ==> 789 # 790
+
+	dbo.TRIBUT_ICMS->TRIBUT_ICMS ==> iguais
+	dbo.TRIBUT_ORIGEM->TRIBUT_ORIGEM ==> iguais
+	dbo.UNIDADES->UNIDADE ==> iguais
+*/
+
+select * from CAEDU_LISTA_COMBO	

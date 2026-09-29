@@ -1,0 +1,29 @@
+USE [CAEDU]
+GO
+
+/****** Object:  View [dbo].[UNOUS_CAE_PRODUTOS_FATOR_P]    Script Date: 16/01/2019 17:09:52 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+
+CREATE VIEW [dbo].[UNOUS_CAE_PRODUTOS_FATOR_P]
+AS
+  
+
+
+
+select a.griffe, a.linha, a.GRUPO_PRODUTO , a.SUBGRUPO_PRODUTO , a.UNOUS_NIVEL 
+from CAE_PRODUTOS_FATOR_P A 
+where UNOUS_NIVEL IS NOT NULL
+GROUP BY a.griffe, a.linha, a.GRUPO_PRODUTO , a.SUBGRUPO_PRODUTO , a.UNOUS_NIVEL 
+
+
+GO
+
+

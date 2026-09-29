@@ -1,0 +1,102 @@
+select A.PEDIDO,B.PRODUTO,c.tot_qtde_entregar,* from estoque_prod_ent a
+inner join estoque_prod1_ent b 
+	on b.romaneio_produto = a.romaneio_produto and b.filial=a.filial
+inner join compras c on c.pedido = a.pedido
+Inner join compras_produto cp on cp.pedido = c.pedido and cp.produto = b.PRODUTO and cp.COR_PRODUTO = b.COR_PRODUTO
+where a.nf_entrada = '000223002' and a.NOME_CLIFOR='KOMPORT'
+AND a.pedido = '162243'
+
+declare @PEDIDO VARCHAR(8)
+SET @PEDIDO = '162243'
+UPDATE A
+SET TOT_QTDE_ORIGINAL = B.QTDE_ORIGINAL,
+	TOT_VALOR_ORIGINAL = ( B.VALOR_ORIGINAL + A.ENCARGO + A.VALOR_IPI - A.DESCONTO ), 
+	TOT_QTDE_ENTREGAR = B.QTDE_ENTREGAR,
+	TOT_VALOR_ENTREGAR = B.VALOR_ENTREGAR,
+	TABELA_FILHA=A.TABELA_FILHA -- #1# --
+FROM COMPRAS A
+	JOIN (SELECT PEDIDO,SUM(QTDE_ENTREGAR) AS QTDE_ENTREGAR, SUM(VALOR_ENTREGAR) AS VALOR_ENTREGAR, SUM(QTDE_ORIGINAL) AS QTDE_ORIGINAL, SUM(VALOR_ORIGINAL) AS VALOR_ORIGINAL
+		FROM COMPRAS_PRODUTO 
+		WHERE PEDIDO=@PEDIDO
+		GROUP BY PEDIDO
+		) B ON A.PEDIDO=B.PEDIDO
+
+
+SELECT PEDIDO,SUM(QTDE_ENTREGAR) AS QTDE_ENTREGAR, SUM(VALOR_ENTREGAR) AS VALOR_ENTREGAR, SUM(QTDE_ORIGINAL) AS QTDE_ORIGINAL, SUM(VALOR_ORIGINAL) AS VALOR_ORIGINAL
+		FROM COMPRAS_PRODUTO 
+		WHERE PEDIDO='162243'
+		GROUP BY PEDIDO
+
+
+select * from compras where tot_qtde_entregar=0 and emissao>'20171101'		
+
+select * from compras where pedido in ('175463','162243')  
+
+
+
+
+BEGIN TRAN
+update compras_produto
+set qtde_entregue = qtde_original, 
+	qtde_entregar = 0,
+	valor_entregue = valor_original,
+	valor_entregar=0,
+	CE1 = 0,CE2 = 0,CE3 = 0,CE4 = 0,CE5 = 0,CE6 = 0,CE7 = 0,CE8 = 0,CE9 = 0,CE10 = 0,CE11 = 0,CE12 = 0,CE13 = 0,CE14 = 0,CE15 = 0,CE16 = 0
+WHERE PEDIDO IN (
+'159564E'
+,'1595720'
+,'15957200'
+,'1595800'
+,'15958000'
+,'1595810'
+,'15958100'
+,'1595830'
+,'15958300'
+,'162242'
+,'162242E'
+,'162243'
+,'162243E'
+,'162244'
+,'162244E'
+,'162245'
+,'162245E'
+,'162246'
+,'162246E'
+,'162247'
+,'162247E'
+,'162248'
+,'162248E'
+);
+
+UPDATE COMPRAS
+SET TOT_QTDE_ENTREGAR=0,TOT_VALOR_ENTREGAR=0
+WHERE PEDIDO IN (
+'159564E'
+,'1595720'
+,'15957200'
+,'1595800'
+,'15958000'
+,'1595810'
+,'15958100'
+,'1595830'
+,'15958300'
+,'162242'
+,'162242E'
+,'162243'
+,'162243E'
+,'162244'
+,'162244E'
+,'162245'
+,'162245E'
+,'162246'
+,'162246E'
+,'162247'
+,'162247E'
+,'162248'
+,'162248E'
+);
+
+COMMIT
+
+
+

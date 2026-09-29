@@ -1,0 +1,1 @@
+select * from CAEDU_LOG_PRINTBAR order by datahora desc

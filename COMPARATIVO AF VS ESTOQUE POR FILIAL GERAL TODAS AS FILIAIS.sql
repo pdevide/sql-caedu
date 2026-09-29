@@ -1,0 +1,69 @@
+declare @tab_filial 
+table (
+ID INT IDENTITY (1,1) NOT NULL PRIMARY KEY,
+FILIAL VARCHAR(25) NOT NULL,
+AF INT, 
+ESTOQUE INT
+)
+INSERT INTO @tab_filial
+select filial, 0, 0 
+from filiais f
+inner join CADASTRO_CLI_FOR cf on cf.CLIFOR=f.CLIFOR
+where cf.INATIVO = 0
+
+declare @id int
+declare @tot int
+declare @AF int, @estoque int
+
+select @id = MIN(id), @tot = max(id)
+from @tab_filial
+
+DECLARE @FILIAL VARCHAR(25)
+
+while @id <= @tot
+BEGIN
+
+	SELECT @FILIAL = FILIAL 
+	FROM @tab_filial
+	WHERE ID = @id
+
+	; WITH AF (griffe,linha,GRUPO_PRODUTO,SUBGRUPO_PRODUTO,PRODUTO,COR_PRODUTO,
+			CODIGO_BARRA,DESC_PRODUTO,desc_cor_produto,TAMANHO,qtde,PRECO1)
+	AS (
+	SELECT c.griffe, c.linha, c.GRUPO_PRODUTO, c.SUBGRUPO_PRODUTO, C.PRODUTO, b.COR_PRODUTO, B.CODIGO_BARRA, c.DESC_PRODUTO,
+				e.desc_cor_produto, RIGHT('00'+convert(varchar,b.TAMANHO),2) as TAMANHO, unpvt.qtde, h.PRECO1
+			FROM (SELECT produto, cor_produto,  ES1,ES2,ES3,ES4,ES5,ES6,ES7,ES8,ES9,ES10,ES11,ES12,ES13,ES14,ES15,ES16,ES17,ES18,ES19,ES20
+			FROM [CAEDU].[dbo].estoque_produtos
+			where FILIAL =@FILIAL
+							) p
+			UNPIVOT
+	(qtde FOR tamanho IN
+	(ES1,ES2,ES3,ES4,ES5,ES6,ES7,ES8,ES9,ES10,ES11,ES12,ES13,ES14,ES15,ES16,ES17,ES18,ES19,ES20) )AS unpvt
+	LEFT JOIN (
+	SELECT  PRODUTO, COR_PRODUTO, TAMANHO, MIN(CODIGO_BARRA) AS CODIGO_BARRA
+	FROM [CAEDU].[dbo].PRODUTOS_BARRA
+	GROUP BY PRODUTO, COR_PRODUTO, TAMANHO
+	) B ON B.PRODUTO = unpvt.PRODUTO AND B.COR_PRODUTO = unpvt.COR_PRODUTO AND B.TAMANHO = substring(unpvt.tamanho,3,2)
+	LEFT join [CAEDU].[dbo].PRODUTOS as c on b.PRODUTO=c.PRODUTO
+	LEFT join [CAEDU].[dbo].PRODUTO_CORES as e on c.PRODUTO=e.PRODUTO and unpvt.COR_PRODUTO=e.COR_PRODUTO
+	LEFT join [CAEDU].[dbo].produtos_precos as H on c.PRODUTO=h.PRODUTO where h.CODIGO_TAB_PRECO ='00'
+	)
+	
+
+	SELECT @AF = SUM(QTDE)
+	FROM AF
+
+	SELECT @estoque = SUM(ESTOQUE)
+	FROM ESTOQUE_PRODUTOS
+	WHERE FILIAL=@FILIAL
+
+	update @tab_filial set AF = @af, ESTOQUE= @estoque
+	where id = @id
+	
+	SET @ID += 1
+	
+END
+
+select *, (af - estoque) as DIFERENÇA 
+from @tab_filial
+WHERE AF IS NOT NULL

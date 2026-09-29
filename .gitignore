@@ -1,0 +1,10 @@
+# Arquivos temporários do Windows e OneDrive
+Thumbs.db
+desktop.ini
+~$*
+*.tmp
+
+# Arquivos temporários de editores
+.vscode/
+.idea/
+*.log

@@ -1,0 +1,47 @@
+select /*b.* */
+DISTINCT char(39)+rtrim(ltrim(B.PRODUTO))+char(39)+','
+from ESTOQUE_PROD_ENT a
+inner join ESTOQUE_PROD1_ENT b on b.ROMANEIO_PRODUTO = a.ROMANEIO_PRODUTO and b.FILIAL = a.FILIAL
+where NF_ENTRADA in ('000260877','000260885') and NOME_CLIFOR='KOMPORT' and a.FILIAL='VENDA ATACADO SC'
+      
+--000259595      
+--000259597   
+
+      
+      
+select produto,COR_PRODUTO,filial,estoque,es1,es2,es3,es4,es5,es6,es7,es8,es9,es10, es11    
+from estoque_produtos where estoque <> 0 and  filial = 'VENDA ATACADO SC' AND produto in 
+('47011721',
+'47011722',
+'47011724',
+'47011729',
+'47011730',
+'47011737',
+'47011740',
+'47011741',
+'47011742',
+'47011743',
+'47011744',
+'47011745',
+'47011748',
+'47011749',
+'47011752',
+'47011753',
+'47011756',
+'47011757',
+'47011758',
+'47011805',
+'47011806',
+'51043101',
+'51043151',
+'51043155',
+'51043158',
+'M4020029',
+'M4020030',
+'M4020031',
+'M4020032',
+'N1030070',
+'N1030072',
+'N1030073',
+'N1030074',
+'N1030076')    

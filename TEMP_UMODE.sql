@@ -1,0 +1,4 @@
+SELECT * FROM PRODUTOS WHERE DESC_PRODUTO LIKE '%MOSQUETEIRO%TESTE%26%'
+
+
+select * from produtos where produto = 'N2030121'

@@ -1,0 +1,12 @@
+ALTER TABLE DBO.PRODUTOS 
+ADD ERP_CODIGO_UMODE	int	NULL,
+	REQUERIDO_POR	varchar(25) NULL,	     	     
+	TIPO_COMPRA	varchar(25) NULL,	     	     
+	ERP_CAB_OPCAO	int	NULL,
+	ERP_CAB_COD_CABIDE	varchar(15) NULL,	     	     
+	ERP_UMODE_ID_VARIANTE	int	NULL,
+	ERP_UMODE_BATCH_NAME	varchar(100) NULL,	     	     
+	ENTREGA	datetime NULL,
+	LIMITE_ENTREGA	datetime	NULL,
+	ERP_CUPS_DATA_ACORDADA	datetime
+GO

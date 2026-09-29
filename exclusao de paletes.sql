@@ -1,0 +1,13 @@
+DELETE from PDA_WMS_TB_ARMAZENAGEM_PALETE 
+where produto in ( '90010021', 'C5010033','C8010068') 
+			and PALETE IN ('L 24 001','P00299','P00300','P00298')
+
+
+DELETE from PDA_WMS_LOG_MOTAGEM_PALETE 
+where produto in ( '90010021', 'C5010033','C8010068') 
+			and PALETE IN ('L 24 001','P00299','P00300','P00298')
+
+
+C8010068 : pallet 356 : 60 volumes
+C5010033 : pallet 355 : 60 volumes
+C5010033 : pallet 354 : 60 volumes 

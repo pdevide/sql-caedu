@@ -1,0 +1,59 @@
+select * from vendas_prod_embalado  where CAIXA ='100513071004895'
+
+
+select distinct a.DOCA, b.filial, a.codigo_filial 
+from PDA_WMS_TB_EMBARQUE a join filiais b 
+on a.codigo_filial = b.clifor where a.faturado = 0
+
+
+       select distinct PDA_WMS_TB_EMBARQUE.caixa, 
+       PDA_WMS_TB_EMBARQUE.lacre, 
+       pda_wms_tb_embarque.placa AS placa, 
+       transportadoras.TRANSPORTADORA, PDA_WMS_TB_EMBARQUE.COD_TIPO_VEICULO, PDA_WMS_TB_TIPO_VEICULO.DESCRICAO
+       from PDA_WMS_TB_EMBARQUE 
+       join transportadoras on PDA_WMS_TB_EMBARQUE.CODIGO_TRANSPORTADORA = TRANSPORTADORAS.CODIGO_TRANSP 
+       left join PDA_WMS_TB_TIPO_VEICULO on PDA_WMS_TB_TIPO_VEICULO.CODIGO = PDA_WMS_TB_EMBARQUE.COD_TIPO_VEICULO
+       where PDA_WMS_TB_EMBARQUE.faturado = 0  
+       and PDA_WMS_TB_EMBARQUE.doca = 'REGISTRO CAIXA' 
+       and PDA_WMS_TB_EMBARQUE.codigo_filial = '000065'
+       --and caixa = '100685051006345'
+       and caixa like '1006204%'
+       order by caixa
+
+
+
+       
+
+update PDA_WMS_TB_EMBARQUE  
+set CAIXA = '10062047'
+where caixa = '100620471006204'
+
+
+10062047
+1006204
+
+
+SELECT * FROM PDA_WMS_TB_EMBARQUE WHERE DOCA LIKE '%REGISTRO%' AND FATURADO=0 AND CAIXA = '100620471006204'
+
+
+
+
+       select * from PDA_WMS_TB_EMBARQUE  where caixa = '100620471006204'
+
+10062047
+1006204
+
+
+update PDA_WMS_TB_EMBARQUE  
+set CAIXA = '10044725'
+where caixa = '100447251004472'
+
+
+
+       select * from VENDAS_PROD_EMBALADO where caixa in ('10068505','10063458')
+
+10044725
+1004472
+
+       
+       select * from VENDAS_PROD_EMBALADO where caixa like '1004472%'

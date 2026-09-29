@@ -1,0 +1,14 @@
+select p.PRODUTO, 
+		case when (p.DESC_PRODUTO = '') then p.DESC_PROD_NF 
+		else p.DESC_PRODUTO
+		end as DESC_PRODUTO, 
+		p.GRIFFE, p.LINHA, p.GRUPO_PRODUTO, p.SUBGRUPO_PRODUTO, 
+		p00.PRECO1 as preco_custo, 
+		p01.PRECO1 as preco_venda
+from PRODUTOS p 
+inner join PRODUTOS_PRECOS p00
+	on p00.PRODUTO=p.PRODUTO AND p00.CODIGO_TAB_PRECO='00'
+inner join PRODUTOS_PRECOS p01
+	on p01.PRODUTO=p.PRODUTO AND p01.CODIGO_TAB_PRECO='01'
+WHERE p.INATIVO=0
+order by 2 ASC

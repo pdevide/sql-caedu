@@ -1,0 +1,137 @@
+select * from vendas_prod_embalado  where CAIXA ='100513071004895'
+
+
+select distinct a.DOCA, b.filial, a.codigo_filial 
+from PDA_WMS_TB_EMBARQUE a join filiais b 
+on a.codigo_filial = b.clifor where a.faturado = 0
+
+
+       select distinct PDA_WMS_TB_EMBARQUE.caixa, 
+       PDA_WMS_TB_EMBARQUE.lacre, 
+       pda_wms_tb_embarque.placa AS placa, 
+       transportadoras.TRANSPORTADORA, PDA_WMS_TB_EMBARQUE.COD_TIPO_VEICULO, PDA_WMS_TB_TIPO_VEICULO.DESCRICAO
+       from PDA_WMS_TB_EMBARQUE 
+       join transportadoras on PDA_WMS_TB_EMBARQUE.CODIGO_TRANSPORTADORA = TRANSPORTADORAS.CODIGO_TRANSP 
+       left join PDA_WMS_TB_TIPO_VEICULO on PDA_WMS_TB_TIPO_VEICULO.CODIGO = PDA_WMS_TB_EMBARQUE.COD_TIPO_VEICULO
+       where PDA_WMS_TB_EMBARQUE.faturado = 0  
+       and PDA_WMS_TB_EMBARQUE.doca = 'REGISTRO CAIXA' 
+       and PDA_WMS_TB_EMBARQUE.codigo_filial = '000065'
+       --and caixa = '100685051006345'
+       and caixa like '1006204%'
+       order by caixa
+
+
+
+-- LIMPAR BOX SUJO
+select DISTINCT from  PDA_WMS_TB_EMBARQUE WHERE DATA >='20180220'
+
+--DELETE from PDA_WMS_TB_EMBARQUE WHERE DOCA LIKE '%PRAIA GRANDE%' AND FATURADO=0 
+update   PDA_WMS_TB_EMBARQUE set FATURADO=1 where faturado=0
+       
+
+update PDA_WMS_TB_EMBARQUE  
+set CAIXA = '10035171'
+where caixa = '100351711003517'
+
+UPDATE PDA_WMS_TB_EMBARQUE  
+SET CAIXA = '10147448'
+WHERE CAIXA = '101474461014744';
+
+103453951046997	ITAIM PACK
+
+108928541089285	DIADEMA PACK
+
+109292751092524	SP - PIRAPORINHA CAIXA
+10929275
+1092524
+
+109322591093255	ITAIM PACK
+10932259
+1093255
+
+select * from PDA_WMS_TB_EMBARQUE  where len(caixa) > 8 AND FATURADO=0
+
+select * from PDA_WMS_TB_EMBARQUE WHERE DOCA LIKE 'ITAIM PACK' AND FATURADO=0  and caixa like '1093255%'
+
+--update PDA_WMS_TB_EMBARQUE 
+--set caixa = '10929275'
+--WHERE DOCA LIKE 'SP - PIRAPORINHA CAIXA' AND FATURADO=0  and caixa like '109292751092524'
+
+delete from PDA_WMS_TB_EMBARQUE where caixa='109322591093255' and doca = 'ITAIM PACK'
+
+select * from VENDAS_PROD_EMBALADO WHERE NOME_CLIFOR = 'ITAIM' AND caixa like '1093255%'
+
+DELETE FROM PDA_WMS_TB_EMBARQUE WHERE DOCA LIKE 'ITAIM PACK' AND FATURADO=0  and caixa = '103453951046997'
+
+SELECT * 
+--DELETE
+FROM PDA_WMS_TB_EMBARQUE WHERE DOCA LIKE 'CARAPICUIBA CAIXA' AND FATURADO=0 
+AND CAIXA = '102927521029087'
+ORDER BY CAIXA
+
+--limpar tudo box ==============================================================================
+select doca,count(*) as qt from PDA_WMS_TB_EMBARQUE where faturado=0
+group by doca
+
+delete from PDA_WMS_TB_EMBARQUE
+where doca in ('PIRASSUNUNGA CAIXA','PINDAMONHANGABA CAIXA','ITAPEVI PACK','BARUERI PACK','REGISTRO CAIXA') and faturado=0
+
+--==============================================================================================
+
+102927521029087	CARAPICUIBA CAIXA
+
+101474461014744
+10147444
+10147445
+10147446
+10147447
+ 
+UPDATE PDA_WMS_TB_EMBARQUE SET CAIXA = '10143712' WHERE CAIXA = '101437121014371' ;
+UPDATE PDA_WMS_TB_EMBARQUE SET CAIXA = '10152332' WHERE CAIXA = '101523321015233' ;
+
+10062047
+1006204
+
+105797241057972	ITAPEVI CAIXA
+       select * from VENDAS_PROD_EMBALADO where caixa like '10125741%'
+
+delete FROM PDA_WMS_TB_EMBARQUE WHERE DOCA LIKE '%ITAPEVI CAIXA%' AND FATURADO=0  and caixa = '105797241057972'
+
+SELECT * FROM PDA_WMS_TB_EMBARQUE WHERE DOCA LIKE '%ITAPEVI CAIXA%' AND FATURADO=0 
+AND CAIXA LIKE '1057972%'
+ORDER BY CAIXA
+
+DIADEMA PACK
+102341181023411
+
+       select * 
+	   DELETE 
+	   from PDA_WMS_TB_EMBARQUE  where caixa = '102341181023411'
+
+
+select * from vendas_prod_embalado where nome_clifor = 'CIDADE OCIAN' AND caixa like '1014744%'
+	
+select * from PDA_WMS_TB_EMBARQUE  where len(caixa) > 8
+10062047
+1006204
+
+
+update PDA_WMS_TB_EMBARQUE  
+set CAIXA = '10044725'
+where caixa = '100447251004472'
+
+
+
+       select * from VENDAS_PROD_EMBALADO where caixa in ('10068505','10063458')
+
+10044725
+1004472
+
+       
+UPDATE COMPRAS SET STATUS_APROVACAO = 'A' WHERE PEDIDO IN 
+(
+'173405',
+'173404',
+'173406'
+
+)

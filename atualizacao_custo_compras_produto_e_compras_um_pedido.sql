@@ -1,0 +1,39 @@
+SET NOCOUNT ON
+
+declare @tabped table (ID INT IDENTITY(1,1), pedido VARCHAR(10), CUSTO NUMERIC(10,2))
+
+insert into @tabped (pedido,custo) values ('218963',16.30);
+
+SET NOCOUNT OFF
+
+DECLARE @I INT 
+DECLARE @TOT INT 
+
+SELECT @I = MIN(ID), @TOT=MAX(ID)
+FROM @tabped 
+
+DECLARE @PEDIDO VARCHAR(10), @CUSTO NUMERIC(10,2)
+
+WHILE @I<=@TOT
+BEGIN
+	
+	PRINT @I
+
+	SELECT @PEDIDO=PEDIDO, @CUSTO=CUSTO
+	FROM @tabped WHERE ID=@I
+		
+	update compras_produto 
+	set		custo1 = @CUSTO, 
+			VALOR_ORIGINAL = QTDE_ORIGINAL*@CUSTO, 
+			VALOR_ENTREGAR=QTDE_ENTREGAR*@CUSTO, 
+			ERP_VERBAS_EMPENHO=QTDE_ORIGINAL*@CUSTO 
+	where pedido = @PEDIDO /*and produto = '23100011'*/
+
+	update compras 
+	set TOT_VALOR_ORIGINAL= TOT_QTDE_ORIGINAL * @CUSTO, 
+		TOT_VALOR_ENTREGAR = TOT_QTDE_ENTREGAR * @CUSTO 
+	WHERE PEDIDO = @PEDIDO;
+
+	SET @I=@I + 1
+END
+

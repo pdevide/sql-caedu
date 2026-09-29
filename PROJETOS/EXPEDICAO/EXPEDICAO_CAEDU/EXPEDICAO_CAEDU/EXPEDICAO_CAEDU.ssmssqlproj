@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="EXPEDICAO_CAEDU">
+  <Items>
+    <LogicalFolder Name="Conexões" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="dblinx:CCP\paulo.devide">
+          <Created>2025-09-26T15:55:08.6291919-03:00</Created>
+          <Type>SQL</Type>
+          <Server>dblinx</Server>
+          <UserName />
+          <Authentication>Autenticação do Windows</Authentication>
+          <InitialDB>CAEDU</InitialDB>
+          <LoginTimeout>30</LoginTimeout>
+          <TrustServerCertificate>True</TrustServerCertificate>
+          <EncryptionOption>True</EncryptionOption>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName />
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Consultas" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="ANALISE DOCAS NAO FATURADAS VS DISTRIBUICOES.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dblinx:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dblinx</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>ANALISE DOCAS NAO FATURADAS VS DISTRIBUICOES.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ARRUMAR COR TROCADA DE DISTRIBUICAO.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dblinx:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dblinx</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>ARRUMAR COR TROCADA DE DISTRIBUICAO.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CGP_GERAR_ROMANEIOS_EXPEDICAO.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dblinx:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dblinx</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CGP_GERAR_ROMANEIOS_EXPEDICAO.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CONSERTA CAGADA DE VENDAS_PROD_EMBALADO DELETADO COM VENDAS_PRODUTO INTEGRO.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dblinx:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dblinx</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CONSERTA CAGADA DE VENDAS_PROD_EMBALADO DELETADO COM VENDAS_PRODUTO INTEGRO.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CONSULTA_FIXA_PRD.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dblinx:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dblinx</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CONSULTA_FIXA_PRD.sql</FullPath>
+        </FileNode>
+        <FileNode Name="corrige caixas expedicao sao roque.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dblinx:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dblinx</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>corrige caixas expedicao sao roque.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CORRIGE EXPEDICAO.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dblinx:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dblinx</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CORRIGE EXPEDICAO.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CSV 5.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dblinx:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dblinx</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CSV 5.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CSV.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dblinx:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dblinx</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CSV.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CSV2.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dblinx:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dblinx</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CSV2.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CSV2-lote.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dblinx:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dblinx</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CSV2-lote.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CSV3.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dblinx:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dblinx</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CSV3.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CSV4.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dblinx:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dblinx</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CSV4.sql</FullPath>
+        </FileNode>
+        <FileNode Name="GERAR CSV PARA PEDIDOS COM ROMANEIO INCOMPLETO.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dblinx:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dblinx</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>GERAR CSV PARA PEDIDOS COM ROMANEIO INCOMPLETO.sql</FullPath>
+        </FileNode>
+        <FileNode Name="GERAR_ROMANEIO_PEDIDO_COMPRA_INCOMPLETO_FATURADO_PARCIAL.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dblinx:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dblinx</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>GERAR_ROMANEIO_PEDIDO_COMPRA_INCOMPLETO_FATURADO_PARCIAL.sql</FullPath>
+        </FileNode>
+        <FileNode Name="INATIVAR HIERARQUIAS.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dblinx:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dblinx</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>INATIVAR HIERARQUIAS.sql</FullPath>
+        </FileNode>
+        <FileNode Name="QUERY PARA PEGAR PEDIDO DE LOJA ENTRADAS DE SC PARA PASSAR PARA PDA.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dblinx:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dblinx</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>QUERY PARA PEGAR PEDIDO DE LOJA ENTRADAS DE SC PARA PASSAR PARA PDA.sql</FullPath>
+        </FileNode>
+        <FileNode Name="QUERY PDA PRA LISTAR ROMANEIO DE LOJAS ENTRADAS.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dblinx:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dblinx</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>QUERY PDA PRA LISTAR ROMANEIO DE LOJAS ENTRADAS.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery10.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dblinx:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dblinx</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery10.sql</FullPath>
+        </FileNode>
+        <FileNode Name="VERIFICA DETALHE.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dblinx:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dblinx</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>VERIFICA DETALHE.sql</FullPath>
+        </FileNode>
+        <FileNode Name="VERIFICA ROMANEIO.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dblinx:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dblinx</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>VERIFICA ROMANEIO.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Diversos" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>

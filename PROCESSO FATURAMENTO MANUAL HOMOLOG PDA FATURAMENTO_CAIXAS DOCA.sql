@@ -1,0 +1,69 @@
+select * from caedu_reserva_automatica where pedido = '336240'
+
+select * from VENDAS 
+where PEDIDO in (
+select VENDA from caedu_reserva_automatica where pedido = '336240')
+
+select * from VENDAS where PEDIDO = 'CX-27686046'
+
+select * from VENDAS_PRODUTO where PEDIDO = 'CX-27686046'
+
+select * from VENDAS_PROD_EMBALADO where PEDIDO = 'CX-27686046'
+
+SELECT * FROM FATURAMENTO_CAIXAS WHERE CAIXA = '27686046'
+
+
+
+select * 
+--update a set CAIXA_FECHADA=1
+from FATURAMENTO_CAIXAS a
+where CAIXA in (select CAIXA from caedu_reserva_automatica where pedido = '336240')
+
+select * from PDA_WMS_TB_EMBARQUE where DATA>='20240429'
+/*
+insert into PDA_WMS_TB_EMBARQUE (
+CAIXA,
+DOCA,
+CODIGO_FILIAL,
+USUARIO,
+DATA,
+FATURADO,
+CODIGO_TRANSPORTADORA,
+PLACA,
+LACRE,
+COD_TIPO_VEICULO,
+CODIGO_ROTA,
+MOTORISTA,
+DOC_MOTORISTA)
+
+select 
+		CAIXA,
+		NOME_CLIFOR + ' CAIXA' AS DOCA,
+		F.COD_FILIAL AS CODIGO_FILIAL,
+		'2453' AS USUARIO,
+		GETDATE() AS DATA,
+		0 AS FATURADO,
+		'21044' AS CODIGO_TRANSPORTADORA,
+		'EJW2A46' AS PLACA,
+		'55123-55124' AS LACRE,
+		1 AS COD_TIPO_VEICULO,
+		'001' AS CODIGO_ROTA,
+		'GILSON' AS MOTORISTA,
+		'0148717400' AS DOC_MOTORISTA
+from FATURAMENTO_CAIXAS FC
+INNER JOIN FILIAIS F ON F.FILIAL=FC.NOME_CLIFOR
+where CAIXA in (select CAIXA from caedu_reserva_automatica where pedido = '336240')
+*/
+
+select * from PDA_WMS_TB_EMBARQUE where DATA>='20240730'
+
+lx_processos
+
+select * 
+UPDATE FILIAIS SET DT_ULTIMO_INVENTARIO='20240729'
+from FILIAIS where FILIAL LIKE 'MG SH ITAU POWER%'
+
+
+SELECT * 
+UPDATE A SET DATA_SALDO_PA='20240729'
+FROM CM_DATA_FECHAMENTO A WHERE FILIAL = 'MG SH ITAU POWER'    

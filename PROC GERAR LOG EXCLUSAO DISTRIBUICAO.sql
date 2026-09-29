@@ -1,0 +1,133 @@
+/*
+set @origem=1 
+set @distribuicao='332935' 
+--set @origem=3
+--set @distribuicao='00033498'
+SELECT * FROM CGP_LOG_DISTRIBUICOES_EXCLUIDAS
+SELECT * FROM CGP_LOG_DISTRIBUICOES_EXCLUIDAS_ITENS WHERE ID=9
+
+EXEC [LX_CAEDU_EXCLUI_DISTRIBUICAO_PEDIDO] '327068V' 
+
+EXEC [LX_CAEDU_EXCLUI_DISTRIBUICAO_WMS] '00033524'
+
+select * FROM DBO.CGP_PDA_WMS_STATUS_DISTRIBUICAO
+
+update DBO.CGP_PDA_WMS_STATUS_DISTRIBUICAO set status_pda=1 where id=19
+
+insert into DBO.CGP_PDA_WMS_STATUS_DISTRIBUICAO 
+(origem,distribuicao,status_pda,status_linx,data_recebimento,data_status_linx,data_processamento)
+values (3,'339206',2,null,getdate()-2,null,null)
+
+
+*/
+
+CREATE OR ALTER PROCEDURE CGP_GUARDA_LOG_DISTRIBUICAO_EXCLUIDA --3,'00033498'
+	@origem int, 
+	@distribuicao varchar(8)
+AS
+BEGIN
+
+	declare @CGP_LOG_DISTRIBUICOES_EXCLUIDAS table (
+	ORIGEM int null,
+	DISTRIBUICAO varchar(8) null,
+	TOT_QTDE_LINHAS int null,
+	TOT_QTDE_CAIXAS int null,
+	DATA datetime null,
+	DATA_UNOUS datetime null,
+	DATA_EXCLUSAO datetime not null default (getdate())
+	)
+
+	declare @CGP_LOG_DISTRIBUICOES_EXCLUIDAS_ITENS table (
+		ID int null,
+		PACK char(1) null,
+		PRODUTO varchar(12) null,
+		COR_PRODUTO varchar(10) null,
+		FILIAL varchar(25) null,
+		FILIAL_ORIGEM varchar(25) null,
+		QTDE_TOTAL int null,
+		QTDE_PACK int null,
+		CAIXA varchar(8) null,
+		VENDA varchar(12) null
+	)
+
+	if @origem<3
+	begin
+		insert into @CGP_LOG_DISTRIBUICOES_EXCLUIDAS
+			(ORIGEM,DISTRIBUICAO,TOT_QTDE_LINHAS,TOT_QTDE_CAIXAS,DATA,DATA_UNOUS)
+		select 
+			@origem as ORIGEM
+			,pedido as DISTRIBUICAO
+			,COUNT(*) AS TOT_QTDE_LINHAS
+			,COUNT(DISTINCT CAIXA) AS TOT_QTDE_CAIXAS
+			,MAX(DATA) AS DATA
+			,MAX(DATA_UNOUS) AS DATA_UNOUS
+		from CAEDU_RESERVA_AUTOMATICA
+		WHERE pedido=@distribuicao
+		GROUP BY pedido
+
+		insert into @CGP_LOG_DISTRIBUICOES_EXCLUIDAS_ITENS
+		(pack,produto,COR_PRODUTO,FILIAL,FILIAL_ORIGEM,QTDE_TOTAL,QTDE_PACK,CAIXA,VENDA)
+		select 
+				(select cast(max(distinct rtrim(packs)) as char(1)) from compras_produto 
+				where pedido=a.pedido and produto=a.produto and cor_produto=a.cor_produto) as PACK,
+				PRODUTO,
+				COR_PRODUTO,
+				FILIAL,
+				FILIAL_ORIGEM,
+				QTDE_TOTAL,
+				QTDE_PACK,
+				CAIXA,
+				VENDA
+		from caedu_reserva_automatica a
+		WHERE pedido=@distribuicao
+
+	end
+
+
+	if @origem=3
+	begin
+		insert into @CGP_LOG_DISTRIBUICOES_EXCLUIDAS
+			(ORIGEM,DISTRIBUICAO,TOT_QTDE_LINHAS,TOT_QTDE_CAIXAS,DATA,DATA_UNOUS)
+		select 
+			@origem as ORIGEM
+			,DISTRIBUICAO
+			,COUNT(*) AS TOT_QTDE_LINHAS
+			,COUNT(DISTINCT CAIXA) AS TOT_QTDE_CAIXAS
+			,MAX(DATA) AS DATA
+			,MAX(DATA_UNOUS) AS DATA_UNOUS
+		from CAEDU_RESERVA_AUTOMATICA_PACK_WMS
+		WHERE DISTRIBUICAO=@distribuicao
+		GROUP BY DISTRIBUICAO
+
+		insert into @CGP_LOG_DISTRIBUICOES_EXCLUIDAS_ITENS
+		(pack,produto,COR_PRODUTO,FILIAL,FILIAL_ORIGEM,QTDE_TOTAL,QTDE_PACK,CAIXA,VENDA)
+		select 
+				PACK,
+				PRODUTO,
+				null as COR_PRODUTO,
+				FILIAL,
+				FILIAL_ORIGEM,
+				QTDE_TOTAL,
+				QTDE_PACK,
+				CAIXA,
+				VENDA
+		from CAEDU_RESERVA_AUTOMATICA_PACK_WMS a
+		where DISTRIBUICAO=@distribuicao
+	end
+
+	DECLARE @lastid int
+
+	insert into CGP_LOG_DISTRIBUICOES_EXCLUIDAS
+			(ORIGEM,DISTRIBUICAO,TOT_QTDE_LINHAS,TOT_QTDE_CAIXAS,DATA,DATA_UNOUS,DATA_EXCLUSAO)
+	select ORIGEM,DISTRIBUICAO,TOT_QTDE_LINHAS,TOT_QTDE_CAIXAS,DATA,DATA_UNOUS,DATA_EXCLUSAO 
+	from @CGP_LOG_DISTRIBUICOES_EXCLUIDAS
+
+	SET @lastid = SCOPE_IDENTITY()
+
+	INSERT INTO CGP_LOG_DISTRIBUICOES_EXCLUIDAS_ITENS
+		(ID,pack,produto,COR_PRODUTO,FILIAL,FILIAL_ORIGEM,QTDE_TOTAL,QTDE_PACK,CAIXA,VENDA)
+	select @lastid as ID,pack,produto,COR_PRODUTO,FILIAL,FILIAL_ORIGEM,QTDE_TOTAL,QTDE_PACK,CAIXA,VENDA 
+	from @CGP_LOG_DISTRIBUICOES_EXCLUIDAS_ITENS
+
+END
+
