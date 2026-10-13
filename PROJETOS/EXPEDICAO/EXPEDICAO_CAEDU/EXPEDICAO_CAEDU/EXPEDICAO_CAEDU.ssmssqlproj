@@ -117,6 +117,12 @@
           <AssociatedConnUserName />
           <FullPath>INATIVAR HIERARQUIAS.sql</FullPath>
         </FileNode>
+        <FileNode Name="Pega e Lista V2.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dblinx:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dblinx</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Pega e Lista V2.sql</FullPath>
+        </FileNode>
         <FileNode Name="QUERY PARA PEGAR PEDIDO DE LOJA ENTRADAS DE SC PARA PASSAR PARA PDA.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dblinx:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>dblinx</AssociatedConnSrvName>
