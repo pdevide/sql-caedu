@@ -1,12 +1,13 @@
-CREATE or ALTER PROCEDURE CGP_BAIXA_TRANSITO_AUTOMATICO_NOTAS_QUIOSQUE
+CREATE or ALTER PROCEDURE CGP_BAIXA_TRANSITO_AUTOMATICO_NOTAS_QUIOSQUE --'35261046377727002722550020000581701722076469'
 /*
 PAULO DEVIDE
 CRIAÇÃO: 03-09-2026
 FINALIDADE: VARRER NOTAS FISCAIS DO PROCESSO DE TRANSFERENCIA ENTRE LOJAS E QUIOSQUES 
             E BAIXAR O TRANSITO DAS NOTAS FISCAIS AUTORIZADAS AUTOMATICAMENTE, 
             SEM A NECESSIDADE DE BAIXAR PELA TELA DO LINX
-            
+lx_processos            
 */
+@chave_nfe varchar(44) = NULL
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -39,73 +40,148 @@ BEGIN
             STATUS_TRANSITO         VARCHAR(1),
             CHAVE_NFE               VARCHAR(44)
         );
+        IF @chave_nfe IS NULL
+        BEGIN
+            print 'baixa em lote'
+            -- 2. Carga Inicial dos Dados
+            INSERT INTO @NOTAS_TRANSITO (
+                ROMANEIO_PRODUTO,
+                FILIAL,
+                REGIAO,
+                FILIAL_ORIGEM,
+                TIPO_ENTRADA_SAIDA,
+                CODIGO_TAB_PRECO,
+                NUMERO_NF_TRANSFERENCIA,
+                FORNECEDOR,
+                RESPONSAVEL,
+                EMISSAO,
+                OBS,
+                ENTRADA_CONFERIDA,
+                ENTRADA_SEM_PRODUTOS,
+                QTDE_TOTAL,
+                VALOR_TOTAL,
+                FATOR_PRECO,
+                ROMANEIO_NF_SAIDA,
+                VALOR_NAO_CONFERIDO,
+                QTDE_NAO_CONFERIDA,
+                LIBERA_TRANSITO,
+                STATUS_TRANSITO,
+                CHAVE_NFE
+            )
+            SELECT loja_entradas.romaneio_produto,
+                   loja_entradas.filial,
+                   regiao,
+                   loja_entradas.filial_origem,
+                   loja_entradas.tipo_entrada_saida,
+                   loja_entradas.codigo_tab_preco,
+                   loja_entradas.numero_nf_transferencia,
+                   loja_entradas.fornecedor,
+                   loja_entradas.responsavel,
+                   loja_entradas.emissao,
+                   loja_entradas.obs,
+                   loja_entradas.entrada_conferida,
+                   loja_entradas.entrada_sem_produtos,
+                   loja_entradas.qtde_total,
+                   loja_entradas.valor_total,
+                   loja_entradas.fator_preco,
+                   loja_entradas.romaneio_nf_saida,
+                   loja_entradas.valor_nao_conferido,
+                   loja_entradas.qtde_nao_conferida,
+                   CONVERT(BIT, 0) AS LIBERA_TRANSITO,
+                   loja_entradas_dif.status_transito,
+                   LOJA_ENTRADAS.CHAVE_NFE
+            FROM   loja_entradas
+                   JOIN filiais
+                     ON loja_entradas.filial = filiais.filial
+                   LEFT JOIN loja_entradas_dif
+                         ON loja_entradas.filial = loja_entradas_dif.filial
+                            AND loja_entradas.numero_nf_transferencia = loja_entradas_dif.numero_nf_transferencia
+                            AND loja_entradas.filial_origem = loja_entradas_dif.filial_origem
+                            AND loja_entradas.romaneio_nf_saida = loja_entradas_dif.romaneio_nf_saida
+                            AND loja_entradas.emissao = loja_entradas_dif.emissao
+                            AND loja_entradas.romaneio_produto = loja_entradas_dif.romaneio_produto
+            WHERE  filiais.matriz IN ( 'MATRIZ' )
+                   AND loja_entradas.entrada_conferida = 0
+                   AND loja_entradas.entrada_cancelada = 0
+                   /*Filtra somente as notas deste processo de tranferencia Quiosque vs Lojas*/
+                   AND EXISTS(SELECT 1 
+                              FROM FATURAMENTO 
+                              WHERE CHAVE_NFE = loja_entradas.CHAVE_NFE 
+                                AND ERP_CUPS_ID_TRANSFERENCIA IS NOT NULL and ERP_BAIXA_TRANSITO_AUTOMATICO='S') 
+            ORDER BY emissao ASC, filiais.filial;
+        END
+        ELSE
+        /* AQUI BAIXA SOMENTE A CHAVE RECEBIDA NO PARAMETRO @CHAVE_NFE */
+        BEGIN 
+            print 'baixa especifica por chave'
+            INSERT INTO @NOTAS_TRANSITO (
+                ROMANEIO_PRODUTO,
+                FILIAL,
+                REGIAO,
+                FILIAL_ORIGEM,
+                TIPO_ENTRADA_SAIDA,
+                CODIGO_TAB_PRECO,
+                NUMERO_NF_TRANSFERENCIA,
+                FORNECEDOR,
+                RESPONSAVEL,
+                EMISSAO,
+                OBS,
+                ENTRADA_CONFERIDA,
+                ENTRADA_SEM_PRODUTOS,
+                QTDE_TOTAL,
+                VALOR_TOTAL,
+                FATOR_PRECO,
+                ROMANEIO_NF_SAIDA,
+                VALOR_NAO_CONFERIDO,
+                QTDE_NAO_CONFERIDA,
+                LIBERA_TRANSITO,
+                STATUS_TRANSITO,
+                CHAVE_NFE
+            )
+            SELECT loja_entradas.romaneio_produto,
+                   loja_entradas.filial,
+                   regiao,
+                   loja_entradas.filial_origem,
+                   loja_entradas.tipo_entrada_saida,
+                   loja_entradas.codigo_tab_preco,
+                   loja_entradas.numero_nf_transferencia,
+                   loja_entradas.fornecedor,
+                   loja_entradas.responsavel,
+                   loja_entradas.emissao,
+                   loja_entradas.obs,
+                   loja_entradas.entrada_conferida,
+                   loja_entradas.entrada_sem_produtos,
+                   loja_entradas.qtde_total,
+                   loja_entradas.valor_total,
+                   loja_entradas.fator_preco,
+                   loja_entradas.romaneio_nf_saida,
+                   loja_entradas.valor_nao_conferido,
+                   loja_entradas.qtde_nao_conferida,
+                   CONVERT(BIT, 0) AS LIBERA_TRANSITO,
+                   loja_entradas_dif.status_transito,
+                   LOJA_ENTRADAS.CHAVE_NFE
+            FROM   loja_entradas
+                   JOIN filiais
+                     ON loja_entradas.filial = filiais.filial
+                   LEFT JOIN loja_entradas_dif
+                         ON loja_entradas.filial = loja_entradas_dif.filial
+                            AND loja_entradas.numero_nf_transferencia = loja_entradas_dif.numero_nf_transferencia
+                            AND loja_entradas.filial_origem = loja_entradas_dif.filial_origem
+                            AND loja_entradas.romaneio_nf_saida = loja_entradas_dif.romaneio_nf_saida
+                            AND loja_entradas.emissao = loja_entradas_dif.emissao
+                            AND loja_entradas.romaneio_produto = loja_entradas_dif.romaneio_produto
+            WHERE  filiais.matriz IN ( 'MATRIZ' )
+                   AND loja_entradas.entrada_conferida = 0
+                   AND loja_entradas.entrada_cancelada = 0
+                   /*Filtra somente as notas deste processo de tranferencia Quiosque vs Lojas*/
+                   --AND EXISTS(SELECT 1 
+                   --           FROM FATURAMENTO 
+                   --           WHERE CHAVE_NFE = loja_entradas.CHAVE_NFE 
+                   --             AND ERP_CUPS_ID_TRANSFERENCIA IS NOT NULL /*and ERP_BAIXA_TRANSITO_AUTOMATICO='S'*/) 
+                    AND loja_entradas.CHAVE_NFE = @chave_nfe
+            ORDER BY emissao ASC, filiais.filial;
 
-        -- 2. Carga Inicial dos Dados
-        INSERT INTO @NOTAS_TRANSITO (
-            ROMANEIO_PRODUTO,
-            FILIAL,
-            REGIAO,
-            FILIAL_ORIGEM,
-            TIPO_ENTRADA_SAIDA,
-            CODIGO_TAB_PRECO,
-            NUMERO_NF_TRANSFERENCIA,
-            FORNECEDOR,
-            RESPONSAVEL,
-            EMISSAO,
-            OBS,
-            ENTRADA_CONFERIDA,
-            ENTRADA_SEM_PRODUTOS,
-            QTDE_TOTAL,
-            VALOR_TOTAL,
-            FATOR_PRECO,
-            ROMANEIO_NF_SAIDA,
-            VALOR_NAO_CONFERIDO,
-            QTDE_NAO_CONFERIDA,
-            LIBERA_TRANSITO,
-            STATUS_TRANSITO,
-            CHAVE_NFE
-        )
-        SELECT loja_entradas.romaneio_produto,
-               loja_entradas.filial,
-               regiao,
-               loja_entradas.filial_origem,
-               loja_entradas.tipo_entrada_saida,
-               loja_entradas.codigo_tab_preco,
-               loja_entradas.numero_nf_transferencia,
-               loja_entradas.fornecedor,
-               loja_entradas.responsavel,
-               loja_entradas.emissao,
-               loja_entradas.obs,
-               loja_entradas.entrada_conferida,
-               loja_entradas.entrada_sem_produtos,
-               loja_entradas.qtde_total,
-               loja_entradas.valor_total,
-               loja_entradas.fator_preco,
-               loja_entradas.romaneio_nf_saida,
-               loja_entradas.valor_nao_conferido,
-               loja_entradas.qtde_nao_conferida,
-               CONVERT(BIT, 0) AS LIBERA_TRANSITO,
-               loja_entradas_dif.status_transito,
-               LOJA_ENTRADAS.CHAVE_NFE
-        FROM   loja_entradas
-               JOIN filiais
-                 ON loja_entradas.filial = filiais.filial
-               LEFT JOIN loja_entradas_dif
-                     ON loja_entradas.filial = loja_entradas_dif.filial
-                        AND loja_entradas.numero_nf_transferencia = loja_entradas_dif.numero_nf_transferencia
-                        AND loja_entradas.filial_origem = loja_entradas_dif.filial_origem
-                        AND loja_entradas.romaneio_nf_saida = loja_entradas_dif.romaneio_nf_saida
-                        AND loja_entradas.emissao = loja_entradas_dif.emissao
-                        AND loja_entradas.romaneio_produto = loja_entradas_dif.romaneio_produto
-        WHERE  filiais.matriz IN ( 'MATRIZ' )
-               AND loja_entradas.entrada_conferida = 0
-               AND loja_entradas.entrada_cancelada = 0
-               /*Filtra somente as notas deste processo de tranferencia Quiosque vs Lojas*/
-               AND EXISTS(SELECT 1 
-                          FROM FATURAMENTO 
-                          WHERE CHAVE_NFE = loja_entradas.CHAVE_NFE 
-                            AND ERP_CUPS_ID_TRANSFERENCIA IS NOT NULL) 
-        ORDER BY emissao ASC, filiais.filial;
+        END
 
         -- 3. Variáveis de Controle do Loop
         DECLARE @ROWNUM INT,
@@ -140,7 +216,7 @@ BEGIN
             SET    entrada_conferida = 1,
                    entrada_encerrada = 1,
                    status_transito   = 4,
-                   obs               = 'retirado do transito pela tela de Liberação'
+                   obs               = 'retirado do transito pelo processo automatico Portal Retail'
             WHERE  romaneio_produto  = @ROMANEIO_PRODUTO
             AND    filial            = @FILIAL;
 
