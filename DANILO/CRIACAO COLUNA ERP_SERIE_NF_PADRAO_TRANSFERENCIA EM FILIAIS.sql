@@ -1,0 +1,4 @@
+alter table dbo.filiais 
+add ERP_SERIE_NF_PADRAO_TRANSFERENCIA VARCHAR(6) NULL
+GO
+
