@@ -140,3 +140,37 @@ OUTER APPLY sys.dm_exec_sql_text(r.sql_handle) t
 WHERE r.database_id = DB_ID('CAEDU');
 
 
+select * 
+from CAEDU_RESERVA_AUTOMATICA_PACK_WMS
+
+select b.*, a.* 
+from CGP_LOG_DISTRIBUICOES_EXCLUIDAS_ITENS a
+inner join CGP_LOG_DISTRIBUICOES_EXCLUIDAS b on b.ID=a.ID
+where caixa in
+('37844065'       
+,'37844098'       
+,'37844167'       
+,'37844168'       
+,'37844244'       
+,'37844311'       
+,'37844357'       
+,'37844461'       
+,'37844680'       
+,'37844701'       
+,'37844702'       
+,'37844742'       
+,'37844743'       
+,'37844805'       
+,'37844806'       
+,'37844854'       
+,'37844868'       
+,'37845270'       
+,'37845271'       
+,'37845389'       
+,'37845390'       
+,'37845645'       
+,'37845646'       
+,'37845647'       
+,'37845914'       
+,'37845915'       
+,'37845916')

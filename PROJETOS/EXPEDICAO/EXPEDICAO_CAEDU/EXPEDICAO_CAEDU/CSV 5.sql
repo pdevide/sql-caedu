@@ -53,11 +53,37 @@ SELECT
 				and ppp.pack=a.PACK
 	inner join filiais f on f.filial=a.filial
 	where a.caixa in 
---(
---'37151279'
---)
+(
+'37844065'       
+,'37844098'       
+,'37844167'       
+,'37844168'       
+,'37844244'       
+,'37844311'       
+,'37844357'       
+,'37844461'       
+,'37844680'       
+,'37844701'       
+,'37844702'       
+,'37844742'       
+,'37844743'       
+,'37844805'       
+,'37844806'       
+,'37844854'       
+,'37844868'       
+,'37845270'       
+,'37845271'       
+,'37845389'       
+,'37845390'       
+,'37845645'       
+,'37845646'       
+,'37845647'       
+,'37845914'       
+,'37845915'       
+,'37845916'       
+)
 
-(select x.caixa from PDA_WMS_TB_EMBARQUE x left join vendas_prod_embalado b on b.caixa=x.caixa where x.FATURADO=0 and b.caixa is null)
+--(select x.caixa from PDA_WMS_TB_EMBARQUE x left join vendas_prod_embalado b on b.caixa=x.caixa where x.FATURADO=0 and b.caixa is null)
 /*
 select * 
 --update a set pack = 
