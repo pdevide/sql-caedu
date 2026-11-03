@@ -1,7 +1,9 @@
 declare @tabesqueleto table (ID INT IDENTITY(1,1), ESQUELETO VARCHAR(50))
 
-insert into @tabesqueleto (ESQUELETO) values ('CALÇA BAGGY')
 
+insert into @tabesqueleto (ESQUELETO) values ('TOP MOLETOM GANGSTER')
+insert into @tabesqueleto (ESQUELETO) values ('CALCA MOLETOM GANGSTER')
+insert into @tabesqueleto (ESQUELETO) values ('M/C LINHO')
 
 
 --insert into @tabesqueleto (ESQUELETO) values ('PIJAMA M/L E CALÇA MEIA MALHA LIC')
@@ -44,7 +46,9 @@ UPDATE PRODUTOS SET ERP_COD_ESQUELETO='XXX', ERP_DESC_ESQUELETO='XXX' WHERE PROD
 select * 
 from caedu_lista_combo where id_dominio='026' 
 and descricao in
-('CALÇA BAGGY'
+('TOP MOLETOM GANGSTER',
+'CALCA MOLETOM GANGSTER',
+'M/C LINHO'
 )
 
 UPDATE PRODUTOS SET ERP_COD_ESQUELETO='XXX', ERP_DESC_ESQUELETO='XXX' WHERE PRODUTO='XXX';
