@@ -32,3 +32,5 @@ BEGIN CATCH
     PRINT 'Erro. Triggers religadas e rollback efetuado: ' + ERROR_MESSAGE();
 END CATCH
 GO
+
+--select top 10 * from CM_FECHAMENTO_CUSTO_MEDIO where data_saldo>='20260930'
