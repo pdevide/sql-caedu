@@ -42,7 +42,7 @@ BEGIN
         );
         IF @chave_nfe IS NULL
         BEGIN
-            print 'baixa em lote'
+            --print 'baixa em lote'
             -- 2. Carga Inicial dos Dados
             INSERT INTO @NOTAS_TRANSITO (
                 ROMANEIO_PRODUTO,
@@ -113,7 +113,7 @@ BEGIN
         ELSE
         /* AQUI BAIXA SOMENTE A CHAVE RECEBIDA NO PARAMETRO @CHAVE_NFE */
         BEGIN 
-            print 'baixa especifica por chave'
+            --print 'baixa especifica por chave'
             INSERT INTO @NOTAS_TRANSITO (
                 ROMANEIO_PRODUTO,
                 FILIAL,
