@@ -49,17 +49,18 @@ left join PRODUTOS_PACKS_PERMITIDOS ppp
 left join FILIAIS F ON F.FILIAL = A.filial
 where a.caixa in  
 
---(select a.caixa
---from caedu_reserva_automatica a
---left join faturamento_prod b on b.caixa = a.caixa
---left join vendas_prod_embalado c on c.caixa = a.CAIXA
---where a.pedido in (
---'374844E',
---'378186E'
---)
---and b.nf_saida is null and c.pedido is null)
+/* aqui é para gerar romaneio quando já tem alguma caixa ja faturada ou com box ja feito
+(select a.caixa
+from caedu_reserva_automatica a
+left join faturamento_prod b on b.caixa = a.caixa
+left join vendas_prod_embalado c on c.caixa = a.CAIXA
+where a.pedido in (
+'388066'
+)
 
+and b.nf_saida is null and c.pedido is null)
 
+*/
 
 --(select cra.caixa
 --from caedu_reserva_automatica cra 
@@ -71,6 +72,7 @@ where a.caixa in
 
 -- descomentar esse para ficar default
 (select x.caixa from PDA_WMS_TB_EMBARQUE x left join vendas_prod_embalado b on b.caixa=x.caixa where x.FATURADO=0 and b.caixa is null)
+
 --and CODIGO_FILIAL = '000027'
 --and pda.doca <> 'SP SH JARDIM ORIENTE PACK' --and filial_origem='CD CAJAMAR' 
 --AND FILIAL<>'SP SH JARDIM ORIENTE'     
